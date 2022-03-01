@@ -1,0 +1,38 @@
+site_name: Projeto de Levantamento Topográfico
+site_url: https://example.com/ 
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: purple
+      toggle:
+        icon: material/weather-night
+        name: Modo noturno
+    - scheme: slate
+      primary: deep purple
+      toggle:
+      icon: material/weather-sunny
+      name: Modo Claro
+
+    
+nav:
+  - Home: index.md
+  - Notebook page: notebook.ipynb
+  - Python file: python_script.py
+  - dois: pag_2.md
+  - tres: pag_3.md
+plugins:
+  - mkdocs-jupyter
+
+markdown_extensions:
+  - pymdownx.emoji      # Suporte a emojis
+  - pymdownx.tasklist   # Suporte a  tarefas
+  - pymdownx.mark       # suporte a marcaçoes 
+  - pymdownx.tilde      # suporte a tachado
+  - pymdownx.highlight  # suporte a codigo 
+  - pymdownx.superfences  # suporte a codigo
+  
+
+
+
+
