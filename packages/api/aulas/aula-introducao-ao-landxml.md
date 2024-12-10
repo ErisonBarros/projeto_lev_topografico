@@ -3,9 +3,7 @@
 ***
 
 {% hint style="info" %}
-
-
-### **Objetivos da Aula**
+#### **Objetivos da Aula**
 
 * Apresentar o conceito de **LandXML**.
 * Demonstrar a importância desse formato no contexto da **Engenharia Cartográfica, Topografia e Geoprocessamento**.

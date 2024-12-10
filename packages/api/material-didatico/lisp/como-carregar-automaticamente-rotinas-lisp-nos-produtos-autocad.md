@@ -1,8 +1,6 @@
 # 🚩 Como carregar automaticamente rotinas LISP nos produtos AutoCAD
 
-
-
-> ### Excerpt
+> #### Excerpt
 >
 > **Questão** Como fazer com que as rotinas do AutoLISP sejam carregadas automaticamente ao se iniciar o AutoCAD ou os Conjuntos de Ferramentas do AutoCAD. Isso se aplica tanto à inicialização do software quanto à abertura de um desenho. Isso é necessário porque as rotinas precisam ser recarregadas manualmente toda vez que o programa é iniciado. Solução: Adicionar à inicialização Execute o comando CARRAPLIC. Em Conjunto de inicialização, clique no botão Conteúdo. Clique no botão Adicionar
 
