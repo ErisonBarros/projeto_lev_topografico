@@ -6,13 +6,15 @@
 
 * [💡 Estações Totais Robóticas:](ementa-da-disciplina/estacoes-totais-roboticas.md)
 * [✨ Drones Topográficos:](ementa-da-disciplina/drones-topograficos.md)
-* [🖥️ Processamento  GNSS](ementa-da-disciplina/processamento-gnss.md)
+* [🖥️ Processamento GNSS](ementa-da-disciplina/processamento-gnss.md)
 * [Processamento Estático Rápido](ementa-da-disciplina/processamento-estatico-rapido.md)
 
 ## Aulas
 
 * [📪 Aula: Introdução ao LandXML](aulas/aula-introducao-ao-landxml.md)
-* [📎 Understanding Projects](aulas/understanding-projects.md)
+* [🕹️ Principais Finalidades do CAD para Topografia](aulas/understanding-projects.md)
+* [Comandos do AutoCAD frequentemente utilizados em topografia](aulas/comandos-do-autocad-frequentemente-utilizados-em-topografia.md)
+* [Configurações Necessárias a ser Realizada no CAD](aulas/configuracoes-necessarias-a-ser-realizada-no-cad.md)
 
 ## Atividades
 
