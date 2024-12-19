@@ -29,6 +29,7 @@
   * [🚩 Chat GPT aplicado no AUTOCAD](material-didatico/autocad/chat-gpt-aplicado-no-autocad.md)
 * [🏴 LISP](material-didatico/lisp/README.md)
   * [🚩 Como carregar automaticamente rotinas LISP nos produtos AutoCAD](material-didatico/lisp/como-carregar-automaticamente-rotinas-lisp-nos-produtos-autocad.md)
+* [Page](material-didatico/page.md)
 
 ***
 
