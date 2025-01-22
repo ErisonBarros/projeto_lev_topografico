@@ -21,6 +21,7 @@
 * [🛠️ Conceitos-chave para entender a automação:](atividades/conceitos-chave-para-entender-a-automacao/README.md)
   * [📝 Exemplos de aplicações da automação:](atividades/conceitos-chave-para-entender-a-automacao/exemplos-de-aplicacoes-da-automacao.md)
   * [🧑 Softwares Topográficos:](atividades/conceitos-chave-para-entender-a-automacao/softwares-topograficos.md)
+  * [EXERCÍCIO 1](atividades/conceitos-chave-para-entender-a-automacao/exercicio-1.md)
 
 ## Material Didático
 
