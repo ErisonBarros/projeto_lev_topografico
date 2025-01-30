@@ -1,8 +1,171 @@
 ---
 icon: fill-drip
+description: Prof. Erison Barros.
 ---
 
 # Exibir um Polígono no QGIS
+
+## **Estrutura do PyQGIS para Criar um Polígono**
+
+O **PyQGIS** é a API Python do **QGIS**, usada para manipular e criar objetos geoespaciais. Para criar um **polígono**, seguimos uma estrutura padrão:
+
+***
+
+### **1️⃣ Criar uma Camada Vetorial**
+
+Para desenhar um polígono, é necessário criar uma **camada vetorial** que armazenará os dados geométricos.
+
+```python
+pythonCopiarEditarlayer = QgsVectorLayer("Polygon?crs=EPSG:4326", "Meu_Poligono", "memory")
+```
+
+Aqui, definimos:
+
+* **Tipo de geometria**: `"Polygon"`
+* **Sistema de referência**: `EPSG:4326` (WGS 84 - Latitude/Longitude)
+* **Armazenamento**: `"memory"` (temporária)
+
+Para manipular os dados da camada, usamos seu **provedor de dados**:
+
+```python
+pythonCopiarEditarprovider = layer.dataProvider()
+```
+
+***
+
+### **2️⃣ Criar os Atributos da Camada**
+
+Os polígonos podem ter **atributos** armazenados em uma tabela de atributos.
+
+Adicionamos um campo `id` do tipo **inteiro**:
+
+```python
+pythonCopiarEditarfrom PyQt5.QtCore import QVariant
+provider.addAttributes([QgsField("id", QVariant.Int)])
+layer.updateFields()
+```
+
+***
+
+### **3️⃣ Criar a Geometria do Polígono**
+
+Os polígonos são compostos por **uma lista de pontos** que definem seus vértices.
+
+#### 🔹 Criando um polígono simples:
+
+```python
+pythonCopiarEditarfrom qgis.core import QgsGeometry, QgsPointXY
+
+pontos = [
+    QgsPointXY(-34.90, -8.10),  # Ponto 1
+    QgsPointXY(-34.85, -8.10),  # Ponto 2
+    QgsPointXY(-34.85, -8.05),  # Ponto 3
+    QgsPointXY(-34.90, -8.05),  # Ponto 4
+    QgsPointXY(-34.90, -8.10)   # Fechando o polígono
+]
+```
+
+Para definir a **geometria** do polígono:
+
+```python
+pythonCopiarEditargeometria = QgsGeometry.fromPolygonXY([pontos])
+```
+
+***
+
+### **4️⃣ Criar a Feição e Adicionar à Camada**
+
+Criamos uma **feição** (objeto vetorial):
+
+```python
+pythonCopiarEditarfeature = QgsFeature()
+feature.setGeometry(geometria)
+feature.setAttributes([1])  # ID do polígono
+```
+
+Adicionamos essa feição à camada:
+
+```python
+pythonCopiarEditarprovider.addFeatures([feature])
+layer.updateExtents()
+```
+
+***
+
+### **5️⃣ Adicionar a Camada ao Projeto**
+
+Após criar o polígono, ele precisa ser exibido no **Mapa do QGIS**:
+
+```python
+pythonCopiarEditarfrom qgis.core import QgsProject
+QgsProject.instance().addMapLayer(layer)
+```
+
+***
+
+### **📌 Estrutura Completa do Código**
+
+Aqui está um **script completo** para desenhar um polígono no QGIS:
+
+```python
+pythonCopiarEditarfrom qgis.core import (
+    QgsVectorLayer,
+    QgsFeature,
+    QgsGeometry,
+    QgsPointXY,
+    QgsField,
+    QgsProject
+)
+from PyQt5.QtCore import QVariant
+
+# 1️⃣ Criar uma camada vetorial do tipo polígono
+layer = QgsVectorLayer("Polygon?crs=EPSG:4326", "Meu_Poligono", "memory")
+provider = layer.dataProvider()
+
+# 2️⃣ Criar atributos
+provider.addAttributes([QgsField("id", QVariant.Int)])
+layer.updateFields()
+
+# 3️⃣ Criar a geometria do polígono
+pontos = [
+    QgsPointXY(-34.90, -8.10),
+    QgsPointXY(-34.85, -8.10),
+    QgsPointXY(-34.85, -8.05),
+    QgsPointXY(-34.90, -8.05),
+    QgsPointXY(-34.90, -8.10)  # Fechando o polígono
+]
+geometria = QgsGeometry.fromPolygonXY([pontos])
+
+# 4️⃣ Criar a feição e adicionar à camada
+feature = QgsFeature()
+feature.setGeometry(geometria)
+feature.setAttributes([1])
+provider.addFeatures([feature])
+layer.updateExtents()
+
+# 5️⃣ Adicionar a camada ao projeto do QGIS
+QgsProject.instance().addMapLayer(layer)
+
+print("✅ Polígono criado com sucesso!")
+```
+
+***
+
+### **📌 Resumo da Estrutura**
+
+1️⃣ **Criar uma camada vetorial** do tipo **polígono**\
+2️⃣ **Adicionar atributos** (colunas) à camada\
+3️⃣ **Criar a geometria** (lista de pontos)\
+4️⃣ **Criar uma feição (feature)** e adicionar ao provedor de dados\
+5️⃣ **Adicionar a camada ao projeto QGIS** para exibição
+
+Com essa estrutura, é possível modificar o código para desenhar polígonos com diferentes formatos e coordenadas.
+
+####
+
+####
+
+####
 
 #### 📌 **Passos do Script**
 

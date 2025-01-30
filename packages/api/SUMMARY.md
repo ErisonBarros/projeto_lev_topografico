@@ -30,6 +30,7 @@
   * [🚩 Chat GPT aplicado no AUTOCAD](material-didatico/autocad/chat-gpt-aplicado-no-autocad.md)
 * [🏴 LISP](material-didatico/lisp/README.md)
   * [🚩 Como carregar automaticamente rotinas LISP nos produtos AutoCAD](material-didatico/lisp/como-carregar-automaticamente-rotinas-lisp-nos-produtos-autocad.md)
+* [📌 Estrutura para Criar um Script que Desenha Ponto e Linha no PyQGIS](material-didatico/estrutura-para-criar-um-script-que-desenha-ponto-e-linha-no-pyqgis.md)
 * [Aula de PyQGIS](material-didatico/aula-de-pyqgis/README.md)
   * [Exibir um Polígono no QGIS](material-didatico/aula-de-pyqgis/exibir-um-poligono-no-qgis.md)
   * [Polígono a partir de Azimutes e Distâncias](material-didatico/aula-de-pyqgis/poligono-a-partir-de-azimutes-e-distancias.md)
