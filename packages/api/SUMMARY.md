@@ -32,6 +32,7 @@
   * [🚩 Como carregar automaticamente rotinas LISP nos produtos AutoCAD](material-didatico/lisp/como-carregar-automaticamente-rotinas-lisp-nos-produtos-autocad.md)
 * [Aula de PyQGIS](material-didatico/aula-de-pyqgis/README.md)
   * [Exibir um Polígono no QGIS](material-didatico/aula-de-pyqgis/exibir-um-poligono-no-qgis.md)
+  * [Polígono a partir de Azimutes e Distâncias](material-didatico/aula-de-pyqgis/poligono-a-partir-de-azimutes-e-distancias.md)
   * [4. Manipulação de Camadas](material-didatico/aula-de-pyqgis/4.-manipulacao-de-camadas.md)
   * [6. Visualização e Estilo](material-didatico/aula-de-pyqgis/6.-visualizacao-e-estilo.md)
   * [7. Automação com Scripts Externos](material-didatico/aula-de-pyqgis/7.-automacao-com-scripts-externos.md)
