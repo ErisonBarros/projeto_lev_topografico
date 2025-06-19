@@ -326,4 +326,4 @@ Disponíveis para download:
 
 Obrigado pela participação!
 
-**Contato:** contato@exemplo.com | www.exemplo.com
+**Contato:** erison.barros@ufpe.br
