@@ -17,6 +17,8 @@
 * [Configurações Necessárias a ser Realizada no CAD](aulas/configuracoes-necessarias-a-ser-realizada-no-cad.md)
 * [Orientações Sobre Autocad para Topografia](aulas/orientacoes-sobre-autocad-para-topografia/README.md)
   * [Prática](aulas/orientacoes-sobre-autocad-para-topografia/pratica.md)
+  * [Exercícios](aulas/orientacoes-sobre-autocad-para-topografia/exercicios/README.md)
+    * [Exercícios Práticos e Materiais Complementares](aulas/orientacoes-sobre-autocad-para-topografia/exercicios/exercicios-praticos-e-materiais-complementares.md)
 
 ## Atividades
 
