@@ -15,6 +15,8 @@
 * [🕹️ Principais Finalidades do CAD para Topografia](aulas/understanding-projects.md)
 * [Comandos do AutoCAD frequentemente utilizados em topografia](aulas/comandos-do-autocad-frequentemente-utilizados-em-topografia.md)
 * [Configurações Necessárias a ser Realizada no CAD](aulas/configuracoes-necessarias-a-ser-realizada-no-cad.md)
+* [Orientações Sobre Autocad para Topografia](aulas/orientacoes-sobre-autocad-para-topografia/README.md)
+  * [Prática](aulas/orientacoes-sobre-autocad-para-topografia/pratica.md)
 
 ## Atividades
 
