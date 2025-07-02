@@ -34,6 +34,8 @@
   * [🚩 Chat GPT aplicado no AUTOCAD](material-didatico/autocad/chat-gpt-aplicado-no-autocad.md)
 * [🏴 LISP](material-didatico/lisp/README.md)
   * [🚩 Como carregar automaticamente rotinas LISP nos produtos AutoCAD](material-didatico/lisp/como-carregar-automaticamente-rotinas-lisp-nos-produtos-autocad.md)
+* [Expressões e Funções Python no QGIS](material-didatico/expressoes-e-funcoes-python-no-qgis.md)
+* [Plugins para Topografia](material-didatico/plugins-para-topografia.md)
 * [📌 Estrutura para Criar um Script que Desenha Ponto e Linha no PyQGIS](material-didatico/estrutura-para-criar-um-script-que-desenha-ponto-e-linha-no-pyqgis.md)
 * [Aula de PyQGIS](material-didatico/aula-de-pyqgis/README.md)
   * [Exibir um Polígono no QGIS](material-didatico/aula-de-pyqgis/exibir-um-poligono-no-qgis.md)
@@ -42,8 +44,11 @@
   * [6. Visualização e Estilo](material-didatico/aula-de-pyqgis/6.-visualizacao-e-estilo.md)
   * [7. Automação com Scripts Externos](material-didatico/aula-de-pyqgis/7.-automacao-com-scripts-externos.md)
   * [8. Desafios Práticos](material-didatico/aula-de-pyqgis/8.-desafios-praticos.md)
+* [📌 Expressões de Geometria no QGIS](material-didatico/expressoes-de-geometria-no-qgis.md)
 * [Expressões no QGIS para Topografia](material-didatico/expressoes-no-qgis-para-topografia.md)
 
 ***
 
 * [AutoCAD-SCDA](autocad-scda.md)
+* [Atividade 2025.1](atividade-2025.1/README.md)
+  * [Primeiro Seminário](atividade-2025.1/primeiro-seminario.md)
