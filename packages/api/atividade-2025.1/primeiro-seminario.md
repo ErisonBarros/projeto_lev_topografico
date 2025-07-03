@@ -41,7 +41,7 @@ Descrever, de forma técnica, os procedimentos que serão adotados:
 * Métodos de avaliação dos erros planimétricos e altimétricos;
 * Cálculo de EQM (RMSE), comparações normativas;
 * Classificação da qualidade conforme:
-  * **PEC-PCD (INCRA)**
+  * **PEC-PCD**&#x20;
   * **ABNT NBR 14166**
   * **ASPRS (2015)**
 
