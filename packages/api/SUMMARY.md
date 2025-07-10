@@ -9,6 +9,11 @@
 * [🖥️ Processamento GNSS](ementa-da-disciplina/processamento-gnss.md)
 * [Processamento Estático Rápido](ementa-da-disciplina/processamento-estatico-rapido.md)
 
+***
+
+* [Manual de Equipamentos](manual-de-equipamentos.md)
+* [Instalar a Base](instalar-a-base.md)
+
 ## Aulas
 
 * [📪 Aula: Introdução ao LandXML](aulas/aula-introducao-ao-landxml.md)
