@@ -63,7 +63,7 @@ Após a configuração da estação e da orientação, o equipamento está pront
 
 | Passo | Ação | Menu | Descrição |
 |-------|------|------|-----------|
-| 1 | Inserir Coordenadas | Gerenc memria | Define o ponto de partida antes de criar a obra |
+| 1 | Inserir Coordenadas | Gerenc memória | Define o ponto de partida antes de criar a obra |
 | 2 | Criar Obra | Coleta dados | Cria o arquivo para armazenar os dados do levantamento |
 | 3 | Definir Ponto da Estação | Definir PT Est | Informa ao equipamento sua posição no terreno |
 | 4 | Configurar Orientação | - | Orienta o equipamento em relação a uma direção conhecida (ex: Norte) |
