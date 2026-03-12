@@ -1,0 +1,3 @@
+Crie uma skill chamada "legal-document-explainer" que, quando o usuário enviar qualquer documento jurídico (contrato, termos de serviço, aluguel, política de privacidade, etc.), resume o conteúdo em linguagem simples, destaca cláusulas problemáticas como multas, renovação automática e coleta de dados, atribui um placar de risco (Baixo, Médio ou Alto) e sugere perguntas práticas que o usuário deveria fazer antes de assinar.
+Todo código deve ir em scripts/, documentação e referências em references/, e templates e arquivos auxiliares em assets/.
+Entregue a skill em um arquivo .zip.

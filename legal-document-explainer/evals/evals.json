@@ -1,0 +1,23 @@
+{
+  "skill_name": "legal-document-explainer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Vou alugar um apartamento e a imobiliária me mandou este contrato. Pode dar uma olhada e ver se tem alguma pegadinha? O contrato diz que a multa por rescisão antecipada é de 3 aluguéis inteiros e que a renovação após 12 meses é automática se eu não avisar com 60 dias de antecedência.",
+      "expected_output": "Deve gerar um relatório categorizando o risco como Médio ou Alto, identificando a multa de 3 meses e a renovação automática como bandeiras vermelhas, e sugerindo perguntas para o locador.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Recebi os novos termos de serviço do aplicativo de fotos que eu uso. Eles dizem que 'O usuário cede direitos irrevogáveis, globais e isentos de royalties sobre todas as imagens enviadas para uso em campanhas de marketing de terceiros', e que 'A empresa pode reter os dados do usuário indefinidamente mesmo após a exclusão da conta'. O que mudou e com o que eu devo me preocupar?",
+      "expected_output": "Deve classificar como Risco Alto, focar na questão da coleta de dados, direitos autorais e retenção indefinida, e listar perguntas práticas sobre como revogar esse acesso.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "A academia me ofereceu um plano anual com desconto. Segue o contrato: 'O cancelamento pode ser feito a qualquer momento com aviso prévio de 30 dias. A multa de cancelamento é de 10% sobre o valor dos meses restantes. O foro escolhido é o da cidade de São Paulo.' Vale a pena ou tem algo oculto?",
+      "expected_output": "Deve classificar como Risco Baixo ou Médio (já que a multa é de 10% que é padrão), explicar o prazo de 30 dias e mencionar o foro, além de prover um resumo simples.",
+      "files": []
+    }
+  ]
+}
