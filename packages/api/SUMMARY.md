@@ -59,4 +59,5 @@
 
 ***
 
+* [PROPOSTA COMERCIAL](proposta-comercial.md)
 * [Trabalho](trabalho.md)
