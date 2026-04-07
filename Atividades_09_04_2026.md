@@ -18,11 +18,26 @@ Campus Recife/PE
 
 # **1. OBJETO DA PROPOSTA**
 
-A presente proposta tem por objetivo a **execução do Levantamento Planialtimétrico Cadastral** da área pertencente à FUNDAJ – Apipucos, conforme normas:
+A presente proposta que tem por objetivo:
+
+1. a validação de um uma ortoimagem de uma área entre CTG e CFCH
+
+![Link](https://drive.google.com/drive/folders/1JT87Le7GMeZKRR5joA_9fvouQmHT0MVY?usp=drive_link>) ,
+
+4. Levantamento Cadastral Territorial - Planialtimétrico (Meio-fios; arvores; posteamento, calçadas estacionamentos eixo de via;
+
+![Link](https://www.google.com/maps/d/edit?mid=1pe-WqjT9AzAijp2OrjMJralwKJzipe8&usp=sharing)
+ 
+  conforme normas:
 
 - **ABNT NBR 13133 – Execução de Levantamento Topográfico**  
 - **ABNT NBR 14166 – Representação Cartográfica**  
 - **ABNT NBR 17047 – Levantamento Cadastral Territorial**
+- PEC-PCD segundo o decreto: **Decreto nº 89.817, de 20 de junho de 1984**
+- **Especificação Técnica para Controle de Qualidade de Dados Geoespaciais (ET-CQDG)**.
+
+- 
+  
 
 O levantamento subsidiará a elaboração do **Projeto de concrução de Calçadão ao redor do Cavoco**, atendendo aos padrões técnicos e às exigências normativas.
 
@@ -57,8 +72,8 @@ O levantamento planialtimétrico é essencial para:
 ### ✅ **3.2.1 Implantação dos Pontos de Apoio Topográfico**
 - Utilização de GNSS de precisão;  
 - Monografias completas (coordenadas UTM/altitude, croqui, foto, descrição);  
-- Referenciamento a marco IBGE (SIRGAS2000).
-
+- Referenciamento a marcos do IBGE (SIRGAS2000).
+ 
 ---
 
 ### ✅ **3.2.2 Levantamento Planialtimétrico Cadastral**
@@ -82,23 +97,23 @@ Inclui o levantamento de:
 ---
 
 ### ✅ **3.2.4 Plano de Voo + Modelo 3D**
-- Geração de planejamento (GSD ≤ 20 cm/pixel);  
+- Geração de planejamento (GSD ≤ 5 cm/pixel);  
 - Voo automático com RPA profissional;  
 - Processamento fotogramétrico para:  
   - Nuvem de pontos  
   - Modelo Digital de Superfície (MDS/DSM)  
   - Modelo Digital de Terreno (MDT)  
   - Ortomosaico georreferenciado
-
 ---
 
-### ✅ **3.2.5 Justificativa Técnica para Compra ou Aluguel de Equipamentos**
+### ✅ **3.2.5 Justificativa Técnica para Compra ou Aluguel de Equipamentos** baseado na estrutura da empresa.
+
 - GNSS  
 - Estação Total  
 - Drone RPA  
 - Acessórios
 
-A Equipe deverá justificar economicamente e tecnicamente.
+A Equipe deverá justificar economicamente e tecnicamente baseado na estrutura do serviço e nas caracteristicas da empresa da proposta.
 
 ---
 
@@ -113,7 +128,7 @@ e) Processamento e checagem de consistência dos dados;
 f) Geração de plantas e relatórios;  
 g) Entrega dos produtos finais ao contratante.
 H) Perfil Longitudinal de 10 m  e Transversais de 5 m
-i) Diagrama de Corte e Aterro;
+i) Diagrama de Corte e Aterro (Area da ortoimagem e do levantamento);
 
 ---
 
@@ -129,22 +144,22 @@ A planta deverá conter:
 - Curvas de nível de 1 m e mestras a cada 5 m;  
 - Norte verdadeiro e declinação magnética;  
 - Escala 1:1000;  
-- Articulação em pranchas A1;  
+- Articulação em pranchas A2;  
 - Amarração com parcelamento em raio de 200 m;  
 - Identificação completa de vias, passeios e larguras;  
 - Feições ambientais;  
 - Acidentes geográficos;  
 - Pontos referenciados ao SIRGAS 2000;  
-- Relatório fotográfico mínimo com 2 fotos por fachada;  
-- Planilha de irradiação e poligonação;  
+- Relatório fotográfico mínimo com 2 fotos por monografia;  
+- Planilha  poligonação e de irradiação;  
 - Monografias dos pontos implantados;  
 - Layes conforme INDE e normas cadastrais.
 
 ---
 
 # **6. PRODUTOS A ENTREGAR**
-
-- Planta planialtimétrica 1:1000 em A1;  
+- Controle de Qualidade da Ortoimagem;
+- Planta planialtimétrica 1:1000 em A2;  
 - Arquivos digitais (DWG, DXF, SHP, GPKG);  
 - Nuvem de pontos (.las / .laz);  
 - Ortomosaico georreferenciado;  
@@ -192,6 +207,8 @@ Mínimo exigido: **2 dias**
 ### **Preço Total da Proposta:**  
 **R$ ____________________________**
 
+### **Custo do Levantamento** 
+
 ### **Prazo de Execução:**  
 ______ dias úteis
 
@@ -199,10 +216,7 @@ ______ dias úteis
 30 dias
 
 ### **Forma de Pagamento:**  
-( ) 40% na mobilização  
-( ) 40% na entrega preliminar  
-( ) 20% na conclusão  
-ou outra forma definida pelo proponente.
+- Definida pela proposta;
 
 ---
 
@@ -229,7 +243,9 @@ Assinatura: _________________________________
 ✅ Croqui de localização  
 ✅ Monografias de pontos  
 ✅ Tabelas e fichas técnicas  
-✅ Certificados do piloto de drone (opcional)  
+✅ Certificados do piloto de drone (opcional) 
+✅ Plano de Vôo;
+✅ Autorização de Vôo;
 
 ---
 
