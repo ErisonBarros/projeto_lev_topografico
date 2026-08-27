@@ -21,6 +21,7 @@
 
 ## Aulas
 
+* [📐 Planejamento de Obra de Levantamento Topográfico](aulas/planejamento-obra-levantamento-topografico/README.md)
 * [📪 Aula: Introdução ao LandXML](aulas/aula-introducao-ao-landxml.md)
 * [🕹️ CAD para Topografia](aulas/understanding-projects.md)
 * [⌨️ Comandos do AutoCAD](aulas/comandos-do-autocad-frequentemente-utilizados-em-topografia.md)
