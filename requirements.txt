@@ -1,0 +1,5 @@
+# Dependências para build do site MkDocs
+# (instaladas pela GitHub Action + cache via setup-python@v5)
+
+mkdocs==1.6.1
+mkdocs-material==9.7.7
