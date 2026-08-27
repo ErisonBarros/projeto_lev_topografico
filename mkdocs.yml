@@ -1,37 +1,109 @@
-site_name: Disciplina Projeto de Levantamento Topográfico 
+site_name: Projeto de Levantamento Topográfico · UFPE / LABAT
+site_description: Repositório oficial da disciplina Projeto de Levantamento Topográfico do Departamento de Engenharia Cartográfica da UFPE, mantido pelo Laboratório de Automação Topográfica (LABAT).
+site_author: Erison Barros
+site_url: https://erisonbarros.github.io/projeto_lev_topografico/
+repo_url: https://github.com/ErisonBarros/projeto_lev_topografico
+repo_name: ErisonBarros/projeto_lev_topografico
+edit_uri: edit/erison.barros/packages/api/
+
 theme:
   name: material
+  language: pt-BR
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
   palette:
-    - scheme: default
-      primary: purple
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
       toggle:
         icon: material/weather-night
         name: Modo noturno
-    - scheme: slate
-      primary: deep purple
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: purple
+      accent: deep purple
       toggle:
-      icon: material/weather-sunny
-      name: Modo Claro
+        icon: material/weather-sunny
+        name: Modo claro
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
 
-    
-nav:
-  - Home: index.md
-  - Notebook page: notebook.ipynb
-  - Python file: python_script.py
-  - dois: pag_2.md
-  - tres: pag_3.md
-plugins:
-  - mkdocs-jupyter
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ErisonBarros
+      name: Erison Barros no GitHub
+  generator: false
 
 markdown_extensions:
-  - pymdownx.emoji      # Suporte a emojis
-  - pymdownx.tasklist   # Suporte a  tarefas
-  - pymdownx.mark       # suporte a marcaçoes 
-  - pymdownx.tilde      # suporte a tachado
-  - pymdownx.highlight  # suporte a codigo 
-  - pymdownx.superfences  # suporte a codigo
-  
+  - admonition
+  - attr_list
+  - md_in_html
+  - meta
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
+nav:
+  - Início: index.md
+  - Ementa: ementa.md
+  - Aulas: aulas.md
+  - Manuais: manuais.md
+  - Material Didático: material-didatico.md
+  - Atividades: atividades.md
+  - Sobre:
+      - GitBook: sobre-gitbook.md
+      - LABAT: sobre-labat.md
+      - Como Contribuir: como-contribuir.md
 
-
+exclude_docs: |
+  site/
+  node_modules/
+  .venv/
+  venv/
+  __pycache__/
+  *.pyc
+  .git/
+  .github/
+  deploy-github-pages.md
