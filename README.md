@@ -73,6 +73,7 @@ projeto_lev_topografico/
 - **Processamento Estático Rápido** — linha de base curta
 
 ### 🎓 Aulas
+- **Planejamento de Obra de Levantamento Topográfico** *(nova)* — processo integrado: problema, escopo, reconhecimento, rede de apoio, método, equipe, segurança, QC, entrega
 - Introdução ao LandXML
 - Comandos do AutoCAD para Topografia
 - Configurações necessárias no CAD
