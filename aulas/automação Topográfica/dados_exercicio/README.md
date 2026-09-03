@@ -28,3 +28,7 @@ Para esta base simulada, adotar o sistema de referência informado pelo professo
 - o registro 35 repete coordenada e conteúdo essencial do ponto 1, além de representar um caso de duplicidade a ser tratado pelo grupo.
 
 A correção dos registros deve ser documentada. Não apagar os registros da base bruta. Criar uma versão validada e um arquivo de rejeitados ou de pendências.
+
+## Exercício complementar de perfis topográficos
+
+Para o exercício de perfil longitudinal, esta base também possui a pasta [`perfil/`](perfil/), que contém o arquivo original `pontos.txt`, os arquivos derivados, o roteiro perimétrico, o estaqueamento de 20 em 20 metros, as seções transversais de 500 em 500 metros com 10 metros para cada lado e a planilha de comparação entre cotas fornecidas e cotas coletadas ou extraídas do PE3D.

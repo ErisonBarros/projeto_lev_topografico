@@ -27,6 +27,8 @@ Aula teórico-prática sobre a transformação de dados de levantamentos em prod
 
 [🧩 Exercício integrador para grupos de 5](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/exercicio_integrador_grupos_5.md){target=_blank} · [📊 Base didática de pontos](https://github.com/ErisonBarros/projeto_lev_topografico/tree/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/dados_exercicio){target=_blank}
 
+[📈 Exercício de perfis topográficos — CAD e QGIS](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/exercicio_perfis_topograficos_cad_qgis.md){target=_blank} · [📊 Planilha de perfis e diferenças de cotas](https://github.com/ErisonBarros/projeto_lev_topografico/tree/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/dados_exercicio/perfil){target=_blank}
+
 ### 📐 Planejamento de Obra Topográfica *(nova)*
 
 Aula mais recente, cobre o **planejamento integrado** de uma obra de levantamento topográfico:
