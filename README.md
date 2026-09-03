@@ -35,6 +35,8 @@ projeto_lev_topografico/
 │   ├── index.md                     ← página inicial do site
 │   ├── README.md                    ← arquitetura do site
 │   └── deploy-github-pages.md       ← workflow de publicação
+├── aulas/                           ← aulas adicionais da disciplina
+│   └── automação Topográfica/       ← automação de desenhos técnicos
 ├── packages/api/                    ← conteúdo principal do curso (GitBook)
 │   ├── SUMMARY.md                   ← navegação GitBook
 │   ├── ementa-da-disciplina/        ← ementa + temas centrais
@@ -73,6 +75,7 @@ projeto_lev_topografico/
 - **Processamento Estático Rápido** — linha de base curta
 
 ### 🎓 Aulas
+- **[Automatização de Desenhos Técnicos Topográficos e Cartográficos](aulas/automação%20Topográfica/aula_automatizacao_desenhos_topograficos.md)** — material completo com roteiro de slides, exemplos AutoLISP/Python/QGIS, exercícios e projeto prático; [subpágina no GitHub Pages](https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/)
 - **Planejamento de Obra de Levantamento Topográfico** *(nova)* — processo integrado: problema, escopo, reconhecimento, rede de apoio, método, equipe, segurança, QC, entrega
 - Introdução ao LandXML
 - Comandos do AutoCAD para Topografia

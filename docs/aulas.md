@@ -14,6 +14,17 @@ As aulas são organizadas em três grandes blocos:
 
 ## 📚 Lista de Aulas
 
+### ⚙️ Automatização de Desenhos Técnicos Topográficos e Cartográficos
+
+Aula teórico-prática sobre a transformação de dados de levantamentos em produtos técnicos por meio de AutoCAD, AutoLISP, Python, QGIS e formatos geoespaciais.
+
+- Dados estruturados, coordenadas, CRS, CAD, SIG e templates
+- Geração automatizada de pontos, textos, layers, polilinhas, tabelas e documentos
+- Controle de qualidade, validação, rastreabilidade e reprodutibilidade
+- Exercícios práticos e projeto de geração de planta topográfica
+
+[📖 Abrir material completo no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automação%20Topográfica/aula_automatizacao_desenhos_topograficos.md){target=_blank} · [🌐 Subpágina GitHub Pages — LABAT](https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/){target=_blank}
+
 ### 📐 Planejamento de Obra Topográfica *(nova)*
 
 Aula mais recente, cobre o **planejamento integrado** de uma obra de levantamento topográfico:
