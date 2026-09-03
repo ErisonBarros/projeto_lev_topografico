@@ -125,5 +125,5 @@ Material didático de uso acadêmico. Sem arquivo `LICENSE` formal — uso restr
 ---
 
 <p align="center">
-  <em>Última atualização: Agosto de 2026 · Gerado e publicado via Hermes Agent + GitHub Actions</em>
+  <em>Última atualização: Agosto de 2026 · </em>
 </p>
