@@ -23,7 +23,7 @@ Aula teórico-prática sobre a transformação de dados de levantamentos em prod
 - Controle de qualidade, validação, rastreabilidade e reprodutibilidade
 - Exercícios práticos e projeto de geração de planta topográfica
 
-[📖 Abrir material completo no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automação%20Topográfica/aula_automatizacao_desenhos_topograficos.md){target=_blank} · [🌐 Subpágina GitHub Pages — LABAT](https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/){target=_blank}
+[📖 Abrir material completo no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/aula_automatizacao_desenhos_topograficos.md){target=_blank} · [🌐 Subpágina GitHub Pages — LABAT](https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/){target=_blank}
 
 ### 📐 Planejamento de Obra Topográfica *(nova)*
 

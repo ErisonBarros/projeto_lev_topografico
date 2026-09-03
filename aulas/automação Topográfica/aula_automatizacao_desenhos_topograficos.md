@@ -1118,9 +1118,9 @@ A resposta profissional não é simplesmente “usar um programa”. É construi
 
 ## 26. Materiais complementares entregues
 
-- [`PONTOS.csv`](/home/ubuntu/material_aula_automacao_topografica/PONTOS.csv): conjunto de dados didático.
-- [`TOPO_PONTOS.lsp`](/home/ubuntu/material_aula_automacao_topografica/TOPO_PONTOS.lsp): rotina AutoLISP didática.
-- [`gerador_planta.py`](/home/ubuntu/material_aula_automacao_topografica/gerador_planta.py): gerador Python de DXF, KML, XLSX, DOCX e relatório de validação.
+- [`PONTOS.csv`](PONTOS.csv): conjunto de dados didático.
+- [`TOPO_PONTOS.lsp`](TOPO_PONTOS.lsp): rotina AutoLISP didática.
+- [`gerador_planta.py`](gerador_planta.py): gerador Python de DXF, KML, XLSX, DOCX e relatório de validação.
 
 Antes de utilizar os códigos em um projeto profissional, adaptar template, escala, CRS, unidades, regras de códigos, tolerâncias, representação, procedimentos de controle e requisitos do contratante.
 
