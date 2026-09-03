@@ -50,7 +50,7 @@ Os arquivos abaixo foram gerados a partir do arquivo fornecido. Eles são materi
 
 Para baixar todos os arquivos de uma só vez, utilize o pacote abaixo. Ele contém o `pontos.txt` original, os CSVs derivados, a planilha XLSX, o README da base e o script Python de geração:
 
-- [Baixar pacote completo — `dados_perfil_topografico.zip`](../downloads/dados_perfil_topografico.zip)
+- [Baixar pacote completo — `dados_perfil_topografico.zip`](downloads/dados_perfil_topografico.zip)
 - [Baixar o pacote pelo GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/raw/erison.barros/docs/downloads/dados_perfil_topografico.zip)
 
 ## Entregas obrigatórias
