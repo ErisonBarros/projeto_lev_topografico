@@ -91,7 +91,9 @@ nav:
   - Aulas: aulas.md
   - Manuais: manuais.md
   - Material Didático: material-didatico.md
-  - Atividades: atividades.md
+  - Atividades:
+      - Índice: atividades.md
+      - Exercício de Perfis Topográficos: exercicio-perfis-topograficos.md
   - Sobre:
       - GitBook: sobre-gitbook.md
       - LABAT: sobre-labat.md
