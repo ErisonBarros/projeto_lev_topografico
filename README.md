@@ -76,6 +76,7 @@ projeto_lev_topografico/
 
 ### 🎓 Aulas
 - **[Automatização de Desenhos Técnicos Topográficos e Cartográficos](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/aula_automatizacao_desenhos_topograficos.md)** — material completo com roteiro de slides, exemplos AutoLISP/Python/QGIS, exercícios e projeto prático; [apresentação HTML com 31 slides no GitHub Pages](https://erisonbarros.github.io/projeto_lev_topografico/apresentacao/automacao-topografica/); [arquivos da apresentação no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/tree/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/apresentacao_completa); [página do LABAT](https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/)
+- **[Exercício Integrador — Automação de Desenhos Técnicos](aulas/automação%20Topográfica/exercicio_integrador_grupos_5.md)** — atividade extensa para grupos de cinco alunos, com planejamento, reconhecimento, metodologia, dados, CRS, processamento, AutoLISP/Python/QGIS, QA/QC, produtos, relatório e apresentação.
 - **Planejamento de Obra de Levantamento Topográfico** *(nova)* — processo integrado: problema, escopo, reconhecimento, rede de apoio, método, equipe, segurança, QC, entrega
 - Introdução ao LandXML
 - Comandos do AutoCAD para Topografia
