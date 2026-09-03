@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .column { flex: 1; background: #FFFFFF; border: 1px solid #0B1F3A; padding: 32px; display: flex; flex-direction: column; }
+    .column.auto { border-top: 4px solid #007C83; }
+    .column.manual { border-top: 4px solid #D6A944; }
+    
+    h3 { font-size: 24px; color: #0B1F3A; margin-bottom: 24px; }
+    
+    ul { list-style: none; margin-bottom: 24px; flex: 1; }
+    li { font-size: 20px; margin-bottom: 16px; padding-left: 24px; position: relative; line-height: 1.4; color: #475569; }
+    li::before { content: "■"; position: absolute; left: 0; color: #0B1F3A; font-size: 12px; top: 6px; }
+    .column.auto li::before { color: #007C83; }
+    .column.manual li::before { color: #D6A944; }
+    
+    .metric { background: #E2E8F0; padding: 16px; font-weight: 600; font-size: 18px; border-left: 4px solid #0B1F3A; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>O problema da produção manual</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="column manual">
+        <h3>Processo Manual</h3>
+        <ul>
+          <li>Inserção repetitiva de pontos, textos e blocos.</li>
+          <li>Digitação manual de tabelas e memoriais.</li>
+          <li>Alta probabilidade de erro de transcrição.</li>
+          <li>Alterações exigem refazer todo o trabalho.</li>
+          <li>Dependência exclusiva da atenção do operador.</li>
+        </ul>
+        <div class="metric">
+          Foco: Operação mecânica da ferramenta.
+        </div>
+      </div>
+      
+      <div class="column auto">
+        <h3>Processo Automatizado</h3>
+        <ul>
+          <li>Regras definem a criação de entidades gráficas.</li>
+          <li>Tabelas e documentos gerados da mesma base.</li>
+          <li>Erros são detectados antes da geração da planta.</li>
+          <li>Alterações são resolvidas reprocessando a base.</li>
+          <li>O operador foca na análise e na decisão técnica.</li>
+        </ul>
+        <div class="metric">
+          Foco: Análise técnica e controle de qualidade.
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>3 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

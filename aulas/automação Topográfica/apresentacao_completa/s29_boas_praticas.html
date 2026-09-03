@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .column { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+    
+    .practice-box { background: #FFFFFF; border: 1px solid #D1D8E0; border-left: 4px solid #007C83; padding: 20px; }
+    .practice-box h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 8px; }
+    .practice-box p { font-size: 16px; line-height: 1.5; color: #475569; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Boas práticas de automação</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="column">
+        <div class="practice-box">
+          <h3>1. Padronização</h3>
+          <p>Padronize nomes de campos, layers, arquivos e versões. Utilize templates revisados e identificados.</p>
+        </div>
+        <div class="practice-box">
+          <h3>2. Validação Prévia</h3>
+          <p>Valide os dados antes de criar entidades gráficas. Não presuma CRS, unidade, orientação ou ordem de vértices.</p>
+        </div>
+        <div class="practice-box">
+          <h3>3. Separação de Etapas</h3>
+          <p>Mantenha separados o dado bruto, o dado validado, o processamento e a saída. Nunca sobrescreva o arquivo original.</p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="practice-box">
+          <h3>4. Rastreabilidade</h3>
+          <p>Crie logs com data, versão, arquivo, CRS, número de entradas e saídas. Escreva mensagens de erro claras.</p>
+        </div>
+        <div class="practice-box">
+          <h3>5. Controle de Alterações</h3>
+          <p>Evite alterações manuais não registradas depois da automação. Se for inevitável, registre no relatório.</p>
+        </div>
+        <div class="practice-box" style="border-left-color: #D6A944;">
+          <h3>6. Testes e Revisão</h3>
+          <p>Crie testes pequenos antes de processar milhares de registros. Confira visualmente e numericamente os produtos finais.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>29 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; display: flex; align-items: center; justify-content: center; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background: #F5F7FA;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header { margin-bottom: 14px; }
+    h2 { font-size: 34px; color: #0B1F3A; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.2px; }
+    .divider { width: 56px; height: 4px; background: #D6A944; border-radius: 2px; }
+
+    .content { flex: 1; display: flex; gap: 20px; align-items: stretch; }
+
+    .text-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .visual-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+    .info-box {
+      border-left: 4px solid #0B1F3A;
+      padding: 14px;
+      background: #FFFFFF;
+      border-radius: 6px;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    .info-box h3 { font-size: 18px; color: #0B1F3A; margin-bottom: 8px; font-weight: 600; }
+    .info-box p { font-size: 14px; line-height: 1.4; color: #475569; }
+
+    .code-block {
+      background: #0B1F3A;
+      color: #F5F7FA;
+      font-family: 'IBM Plex Mono', monospace;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
+    .code-label { font-size: 13px; color: #007C83; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; }
+
+    .model-diagram {
+      background: #FFFFFF;
+      border: 1px solid #0B1F3A;
+      padding: 14px;
+      border-radius: 6px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      align-items: stretch;
+    }
+    .model-step {
+      background: #E2E8F0;
+      padding: 10px;
+      text-align: center;
+      font-weight: 600;
+      color: #0B1F3A;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .model-arrow { text-align: center; color: #007C83; font-weight: 700; font-size: 18px; line-height: 1; }
+
+    .footer {
+      position: absolute;
+      bottom: 14px;
+      left: 28px;
+      right: 28px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #0B1F3A;
+      font-weight: 600;
+      border-top: 1px solid #007C83;
+      padding-top: 8px;
+    }
+
+    /* Tighter layout for the small code + diagram block */
+    .visual-col > div:first-child { display: flex; flex-direction: column; gap: 8px; }
+    @media print {
+      .slide-container { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container" role="group" aria-label="Slide: QGIS na automação">
+    <div class="header">
+      <h2>QGIS na automação</h2>
+      <div class="divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="content">
+      <div class="text-col">
+        <div class="info-box">
+          <h3>Expressões e Calculadora</h3>
+          <p>Permitem criar rótulos dinâmicos, extrair coordenadas da geometria e calcular áreas sem edição manual.</p>
+        </div>
+
+        <div class="info-box" style="border-left-color: #007C83;">
+          <h3>Model Designer</h3>
+          <p>Encadeia algoritmos (ex: reprojetar, filtrar, calcular campo, exportar DXF) em um único processo executável e documentado.</p>
+        </div>
+
+        <div class="info-box" style="border-left-color: #D6A944;">
+          <h3>PyQGIS</h3>
+          <p>Automação avançada via Python dentro do ambiente QGIS, operando diretamente sobre as camadas e o projeto.</p>
+        </div>
+      </div>
+
+      <div class="visual-col">
+        <div>
+          <div class="code-label">Rótulo Dinâmico</div>
+          <div class="code-block">concat('P-', to_string("ID"))</div>
+
+          <div class="code-label">Cálculo de Área (CRS projetado)</div>
+          <div class="code-block">round($area, 2)</div>
+        </div>
+
+        <div class="model-diagram" aria-label="Exemplo de Modelo (Model Designer)">
+          <div class="code-label" style="text-align: center;">Exemplo de Modelo (Model Designer)</div>
+          <div class="model-step">Camada CSV</div>
+          <div class="model-arrow" aria-hidden="true">↓</div>
+          <div class="model-step">Criar geometria (X, Y)</div>
+          <div class="model-arrow" aria-hidden="true">↓</div>
+          <div class="model-step">Reprojetar Camada</div>
+          <div class="model-arrow" aria-hidden="true">↓</div>
+          <div class="model-step">Exportar GeoPackage e DXF</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>14 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

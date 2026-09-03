@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; }
+    
+    .card { background: #FFFFFF; border: 1px solid #D1D8E0; padding: 24px; display: flex; flex-direction: column; border-top: 4px solid #0B1F3A; }
+    .card h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 12px; }
+    .card p { font-size: 16px; color: #475569; line-height: 1.5; }
+    .card .data-type { margin-top: auto; padding-top: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #007C83; font-weight: 600; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Dados de campo e equipamentos</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="grid">
+        <div class="card">
+          <h3>GNSS (RTK / Estático)</h3>
+          <p>Posicionamento global por satélite. Exige transformação rigorosa de coordenadas e controle de qualidade do sinal.</p>
+          <div class="data-type">Saída: CSV, RINEX, NMEA</div>
+        </div>
+        <div class="card">
+          <h3>Estação Total</h3>
+          <p>Medição de ângulos e distâncias. Alta precisão local, exige poligonal de apoio e ajustamento.</p>
+          <div class="data-type">Saída: TXT, CSV, RAW</div>
+        </div>
+        <div class="card">
+          <h3>Nível Topográfico</h3>
+          <p>Transferência de altitudes com precisão milimétrica. Essencial para controle altimétrico de obras.</p>
+          <div class="data-type">Saída: Planilha de nivelamento</div>
+        </div>
+        <div class="card">
+          <h3>Drone (Fotogrametria)</h3>
+          <p>Levantamento aéreo para geração de modelos digitais e ortomosaicos. Requer pontos de controle no solo (GCPs).</p>
+          <div class="data-type">Saída: LAS/LAZ, GeoTIFF, DSM</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>8 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

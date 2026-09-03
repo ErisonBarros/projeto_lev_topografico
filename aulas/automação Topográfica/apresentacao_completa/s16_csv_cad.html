@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 40px; }
+    
+    .flow-container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    
+    .flow-node { width: 220px; height: 140px; border: 2px solid #0B1F3A; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; }
+    .flow-node.highlight { background: #0B1F3A; color: #FFFFFF; border-color: #007C83; }
+    
+    .node-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .node-desc { font-size: 14px; color: #475569; }
+    .flow-node.highlight .node-desc { color: #E2E8F0; }
+    
+    .flow-arrow { color: #007C83; font-size: 32px; font-weight: bold; }
+    
+    .code-block { background: #0B1F3A; color: #F5F7FA; font-family: 'IBM Plex Mono', monospace; padding: 20px; border-radius: 4px; font-size: 16px; text-align: center; }
+    .code-highlight { color: #D6A944; font-weight: 600; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>CSV → CAD</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="code-block">
+        1, 289543.125, 9102345.521, 24.32, PV, POSTE
+      </div>
+      
+      <div class="flow-container">
+        <div class="flow-node">
+          <div class="node-title">Leitura</div>
+          <div class="node-desc">Extração de ID, X, Y, Z, Código e Descrição</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">
+          <div class="node-title">Regras de Layer</div>
+          <div class="node-desc">Código "PV" direciona para o layer TOPO_POSTE</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">
+          <div class="node-title">Geração de Entidades</div>
+          <div class="node-desc">Criação de POINT e TEXT (ID, Cota, Descrição)</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="node-title">Quadro</div>
+          <div class="node-desc">Inserção dos dados na tabela de coordenadas do desenho</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>16 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

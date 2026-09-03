@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    
+    .code-block { background: #0B1F3A; color: #F5F7FA; font-family: 'IBM Plex Mono', monospace; padding: 24px; border-radius: 4px; font-size: 15px; line-height: 1.5; overflow-y: auto; flex: 1; }
+    .code-comment { color: #007C83; }
+    .code-keyword { color: #D6A944; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Código AutoLISP: TOPO_PONTOS</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="code-block">
+<span class="code-comment">;;; Trecho principal da rotina de importação</span>
+(<span class="code-keyword">while</span> (<span class="code-keyword">setq</span> linha (read-line handle))
+  (<span class="code-keyword">if</span> (> (strlen (topo:trim linha)) 0)
+    (<span class="code-keyword">progn</span>
+      (<span class="code-keyword">setq</span> campos (topo:split linha ","))
+      (<span class="code-keyword">if</span> (>= (length campos) 6)
+        (<span class="code-keyword">progn</span>
+          (<span class="code-keyword">setq</span> id (topo:numero (nth 0 campos)))
+          (<span class="code-keyword">setq</span> x (topo:numero (nth 1 campos)))
+          (<span class="code-keyword">setq</span> y (topo:numero (nth 2 campos)))
+          (<span class="code-keyword">setq</span> z (topo:numero (nth 3 campos)))
+          (<span class="code-keyword">setq</span> codigo (topo:trim (nth 4 campos)))
+          (<span class="code-keyword">setq</span> descricao (topo:trim (nth 5 campos)))
+
+          (<span class="code-keyword">if</span> (<span class="code-keyword">and</span> id x y z (> (strlen codigo) 0) (> (strlen descricao) 0))
+            (<span class="code-keyword">progn</span>
+              (<span class="code-keyword">setq</span> ponto (list x y z))
+              (<span class="code-keyword">setq</span> layer (topo:layer-por-codigo codigo))
+              
+              <span class="code-comment">;; Criação das entidades no CAD</span>
+              (topo:criar-ponto ponto)
+              (topo:criar-texto "TOPO_ID" (list (+ x 1.0) (+ y 1.0) z) 1.0 (rtos id 2 0))
+              (topo:criar-texto "TOPO_COTAS" (list (+ x 1.0) y z) 1.0 (rtos z 2 2))
+              (topo:criar-texto "TOPO_DESC" (list (+ x 1.0) (- y 1.0) z) 1.0 descricao)
+              (topo:criar-texto layer (list (+ x 2.0) (+ y 2.0) z) 0.8 codigo)
+            )
+          )
+        )
+      )
+    )
+  )
+)
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>18 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

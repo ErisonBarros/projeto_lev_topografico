@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    
+    .flow-container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    
+    .flow-node { width: 160px; height: 160px; border: 2px solid #0B1F3A; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; position: relative; }
+    .flow-node.highlight { background: #0B1F3A; color: #FFFFFF; border-color: #007C83; }
+    
+    .node-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .node-desc { font-size: 12px; color: #475569; }
+    .flow-node.highlight .node-desc { color: #E2E8F0; }
+    
+    .flow-arrow { color: #007C83; font-size: 24px; font-weight: bold; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>O fluxo de trabalho completo</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="flow-container">
+        <div class="flow-node">
+          <div class="node-title">Campo</div>
+          <div class="node-desc">Coleta de dados via GNSS, Estação Total ou Drone</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="node-title">Dados Brutos</div>
+          <div class="node-desc">Arquivos originais e backup de segurança</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">
+          <div class="node-title">Validação</div>
+          <div class="node-desc">Verificação de tipos, limites e CRS</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">
+          <div class="node-title">Processamento</div>
+          <div class="node-desc">Cálculos, ajustamentos e transformações</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">
+          <div class="node-title">Automação</div>
+          <div class="node-desc">Geração de entidades via scripts e rotinas</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="node-title">Entrega</div>
+          <div class="node-desc">Planta, tabela, KML e memorial técnico</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>7 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

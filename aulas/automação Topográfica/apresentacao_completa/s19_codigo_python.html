@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 24px; }
+    
+    .code-block { background: #0B1F3A; color: #F5F7FA; font-family: 'IBM Plex Mono', monospace; padding: 20px; border-radius: 4px; font-size: 14px; line-height: 1.5; flex: 1; overflow-y: auto; }
+    .code-comment { color: #007C83; }
+    .code-keyword { color: #D6A944; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Código Python: leitura e validação</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="code-block">
+<span class="code-comment"># Leitura e conversão segura de tipos</span>
+<span class="code-keyword">def</span> as_float(value: str, field: str, line_number: int) -> float:
+    text = value.strip()
+    <span class="code-keyword">if not</span> text:
+        <span class="code-keyword">raise</span> ValueError(f"linha {line_number}: campo {field} vazio")
+    
+    <span class="code-comment"># Tratamento de vírgula decimal</span>
+    <span class="code-keyword">if</span> "," <span class="code-keyword">in</span> text <span class="code-keyword">and</span> "." <span class="code-keyword">not in</span> text:
+        text = text.replace(",", ".")
+        
+    <span class="code-keyword">try</span>:
+        number = float(text)
+    <span class="code-keyword">except</span> ValueError <span class="code-keyword">as</span> exc:
+        <span class="code-keyword">raise</span> ValueError(f"linha {line_number}: campo {field} não numérico")
+        
+    <span class="code-keyword">if not</span> math.isfinite(number):
+        <span class="code-keyword">raise</span> ValueError(f"linha {line_number}: campo {field} não finito")
+        
+    <span class="code-keyword">return</span> number
+      </div>
+      
+      <div class="code-block">
+<span class="code-comment"># Verificação de duplicidades no fluxo principal</span>
+<span class="code-keyword">for</span> line_number, row <span class="code-keyword">in</span> enumerate(reader, start=2):
+    <span class="code-keyword">try</span>:
+        point_id = int(as_float(row.get("ID", ""), "ID", line_number))
+        x = as_float(row.get("X", ""), "X", line_number)
+        y = as_float(row.get("Y", ""), "Y", line_number)
+        
+        <span class="code-keyword">if</span> point_id <span class="code-keyword">in</span> seen_ids:
+            <span class="code-keyword">raise</span> ValueError(f"linha {line_number}: ID duplicado")
+            
+        xy_key = (round(x, 6), round(y, 6))
+        <span class="code-keyword">if</span> xy_key <span class="code-keyword">in</span> seen_xy:
+            issues.append(f"ALERTA linha {line_number}: coordenada repetida")
+            
+        seen_ids[point_id] = line_number
+        seen_xy[xy_key] = line_number
+        
+        <span class="code-comment"># Adiciona registro válido à lista</span>
+        records.append(PointRecord(point_id, x, y, z, code, desc))
+        
+    <span class="code-keyword">except</span> ValueError <span class="code-keyword">as</span> exc:
+        issues.append(f"ERRO {exc}")
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>19 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

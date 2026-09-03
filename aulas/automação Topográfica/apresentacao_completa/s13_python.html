@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .text-col { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    .code-col { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+    
+    .info-box { border-left: 4px solid #007C83; padding: 20px; background: #FFFFFF; }
+    .info-box h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 10px; }
+    .info-box p { font-size: 16px; line-height: 1.5; color: #475569; }
+    
+    .code-block { background: #0B1F3A; color: #F5F7FA; font-family: 'IBM Plex Mono', monospace; padding: 20px; border-radius: 4px; font-size: 15px; line-height: 1.5; overflow-x: auto; }
+    .code-keyword { color: #D6A944; }
+    .code-comment { color: #007C83; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Python para automação geoespacial</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="text-col">
+        <div class="info-box">
+          <h3>Integração de Formatos</h3>
+          <p>Python atua como ponte entre dados tabulares (CSV), geometrias e formatos de saída (DXF, KML, XLSX, DOCX).</p>
+        </div>
+        <div class="info-box">
+          <h3>Validação Robusta</h3>
+          <p>Permite verificar tipos, limites e duplicidades antes de gerar qualquer entidade gráfica, evitando erros silenciosos.</p>
+        </div>
+        <div class="info-box">
+          <h3>Transformação de CRS</h3>
+          <p>Bibliotecas como <code>pyproj</code> permitem transformar coordenadas entre sistemas de referência de forma rigorosa.</p>
+        </div>
+      </div>
+      
+      <div class="code-col">
+        <div class="code-block">
+<span class="code-comment"># Cálculo de distância e azimute</span>
+<span class="code-keyword">def</span> distancia_azimute(p1, p2):
+    dx = p2[0] - p1[0]
+    dy = p2[1] - p1[1]
+    distancia = math.hypot(dx, dy)
+    azimute = math.degrees(math.atan2(dx, dy)) % 360.0
+    <span class="code-keyword">return</span> distancia, azimute
+        </div>
+        <div class="code-block">
+<span class="code-comment"># Transformação de CRS</span>
+<span class="code-keyword">from</span> pyproj <span class="code-keyword">import</span> Transformer
+
+transformador = Transformer.from_crs(
+    "EPSG:31985", "EPSG:4326", always_xy=True
+)
+longitude, latitude = transformador.transform(x, y)
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>13 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

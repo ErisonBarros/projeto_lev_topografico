@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .list-col { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    ul { list-style: none; }
+    li { font-size: 20px; margin-bottom: 20px; padding-left: 24px; position: relative; line-height: 1.4; color: #475569; }
+    li::before { content: "■"; position: absolute; left: 0; color: #007C83; font-size: 12px; top: 6px; }
+    li strong { color: #0B1F3A; }
+    
+    .diagram-col { flex: 1; display: flex; align-items: center; justify-content: center; }
+    .cad-diagram { width: 100%; height: 300px; background: #FFFFFF; border: 1px solid #0B1F3A; position: relative; display: flex; align-items: center; justify-content: center; }
+    
+    .cad-point { position: absolute; width: 12px; height: 12px; background: #D6A944; border-radius: 50%; }
+    .cad-label { position: absolute; font-family: 'IBM Plex Mono', monospace; font-size: 16px; }
+    .cad-label.id { color: #0B1F3A; font-weight: bold; transform: translate(16px, -16px); }
+    .cad-label.z { color: #007C83; transform: translate(16px, 4px); }
+    .cad-label.desc { color: #475569; transform: translate(16px, 24px); }
+    
+    .grid-line-h { position: absolute; width: 300px; height: 1px; background: #E2E8F0; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; }
+    .grid-line-v { position: absolute; width: 1px; height: 300px; background: #E2E8F0; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>CAD: desenho técnico orientado a regras</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="list-col">
+        <ul>
+          <li><strong>Templates (.DWT):</strong> Definem padrões iniciais do desenho, como unidades, layers, estilos e folhas.</li>
+          <li><strong>Layers:</strong> Organizam entidades segundo função, tema, cor e estado de impressão (ex: TOPO_PONTOS).</li>
+          <li><strong>Blocos e Atributos:</strong> Símbolos reutilizáveis que armazenam informações editáveis.</li>
+          <li><strong>Estilos:</strong> Controlam a aparência e o comportamento gráfico de textos e cotas.</li>
+          <li><strong>Scripts e APIs:</strong> Permitem a criação em lote de entidades a partir de dados externos.</li>
+        </ul>
+      </div>
+      
+      <div class="diagram-col">
+        <div class="cad-diagram">
+          <div class="grid-line-h"></div>
+          <div class="grid-line-v"></div>
+          <div style="position: relative; z-index: 1;">
+            <div class="cad-point"></div>
+            <div class="cad-label id">1</div>
+            <div class="cad-label z">24.32</div>
+            <div class="cad-label desc">POSTE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>10 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

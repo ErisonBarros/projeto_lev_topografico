@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .text-col { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    .visual-col { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    
+    .info-box { border-left: 4px solid #007C83; padding: 20px; background: #FFFFFF; }
+    .info-box h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 10px; }
+    .info-box p { font-size: 16px; line-height: 1.5; color: #475569; }
+    
+    .code-block { background: #0B1F3A; color: #F5F7FA; font-family: 'IBM Plex Mono', monospace; padding: 20px; border-radius: 4px; font-size: 15px; line-height: 1.5; }
+    .code-keyword { color: #D6A944; }
+    
+    .cad-diagram { width: 100%; height: 300px; background: #FFFFFF; border: 1px solid #0B1F3A; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Cálculo de distância e azimute</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="text-col">
+        <div class="info-box">
+          <h3>Convenção Topográfica</h3>
+          <p>O azimute é contado a partir do Norte, no sentido horário, variando de 0° a 360°. A função <code>atan2(dx, dy)</code> no Python foi organizada como X sobre Y para respeitar essa convenção.</p>
+        </div>
+        
+        <div class="code-block">
+<span class="code-keyword">def</span> distancia_azimute(p1, p2):
+    dx = p2[0] - p1[0]
+    dy = p2[1] - p1[1]
+    distancia = math.hypot(dx, dy)
+    azimute = math.degrees(math.atan2(dx, dy)) % 360.0
+    <span class="code-keyword">return</span> distancia, azimute
+        </div>
+      </div>
+      
+      <div class="visual-col">
+        <div class="cad-diagram">
+          <!-- Eixo Norte -->
+          <div style="position: absolute; top: 50px; left: 150px; width: 2px; height: 200px; background: repeating-linear-gradient(to bottom, #D1D8E0, #D1D8E0 4px, transparent 4px, transparent 8px);"></div>
+          <div style="position: absolute; top: 30px; left: 145px; color: #475569; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: bold;">N</div>
+          
+          <!-- Linha P1-P2 -->
+          <div style="position: absolute; top: 250px; left: 150px; width: 250px; height: 3px; background: #0B1F3A; transform-origin: left center; transform: rotate(-36.87deg);"></div>
+          
+          <!-- Pontos -->
+          <div style="position: absolute; top: 244px; left: 144px; width: 12px; height: 12px; background: #D6A944; border-radius: 50%; z-index: 2;"></div>
+          <div style="position: absolute; top: 260px; left: 130px; color: #0B1F3A; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: bold;">P1</div>
+          
+          <div style="position: absolute; top: 94px; left: 344px; width: 12px; height: 12px; background: #D6A944; border-radius: 50%; z-index: 2;"></div>
+          <div style="position: absolute; top: 80px; left: 360px; color: #0B1F3A; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: bold;">P2</div>
+          
+          <!-- Arco do Azimute (CSS approximation) -->
+          <div style="position: absolute; top: 150px; left: 50px; width: 200px; height: 200px; border: 2px solid #007C83; border-radius: 50%; clip-path: polygon(50% 0%, 100% 0%, 100% 50%, 50% 50%);"></div>
+          <div style="position: absolute; top: 130px; left: 180px; color: #007C83; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: bold;">Azimute</div>
+          
+          <!-- Distância -->
+          <div style="position: absolute; top: 175px; left: 250px; color: #0B1F3A; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: bold; transform: rotate(-36.87deg);">Distância</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>22 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

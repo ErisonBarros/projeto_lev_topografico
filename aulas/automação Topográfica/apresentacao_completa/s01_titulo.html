@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0B1F3A; color: #FFFFFF; }
+    .slide-container { width: 1280px; min-height: 720px; background: #0B1F3A; display: flex; flex-direction: column; position: relative; overflow: hidden; padding: 48px; }
+    
+    .content-area { flex: 1; display: flex; align-items: center; z-index: 2; }
+    .text-box { width: 60%; padding-right: 40px; }
+    
+    h1 { font-size: 56px; color: #FFFFFF; line-height: 1.1; margin-bottom: 24px; font-weight: 700; }
+    .divider { width: 80px; height: 6px; background: #D6A944; margin-bottom: 24px; }
+    p.subtitle { font-size: 24px; color: #007C83; font-weight: 600; margin-bottom: 16px; }
+    p.credits { font-size: 20px; color: #E2E8F0; line-height: 1.5; }
+    
+    .hero-image { position: absolute; right: 0; top: 0; width: 50%; height: 100%; object-fit: cover; object-position: left center; z-index: 1; opacity: 0.9; }
+    .gradient-overlay { position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: linear-gradient(to right, #0B1F3A 0%, transparent 40%); z-index: 1; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #FFFFFF; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; z-index: 3; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <img src="topografia_hero.png" class="hero-image" alt="Ilustração técnica de topografia">
+    <div class="gradient-overlay"></div>
+    
+    <div class="content-area">
+      <div class="text-box">
+        <h1>Automatização de Desenhos Técnicos Topográficos e Cartográficos</h1>
+        <div class="divider"></div>
+        <p class="subtitle">O problema não é desenhar rápido. É transformar dados em informação auditável.</p>
+        <p class="credits">
+          <strong>Prof. Dr. Erison Rosa de Oliveira Barros</strong><br>
+          Engenharia Cartográfica e de Agrimensura<br>
+          Disciplina: Projeto de Levantamento Topográfico
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>1 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

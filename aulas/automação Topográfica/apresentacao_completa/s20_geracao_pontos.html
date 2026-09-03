@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+    
+    .info-box { border-left: 4px solid #007C83; padding: 20px; background: #FFFFFF; }
+    .info-box h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 10px; }
+    .info-box p { font-size: 16px; line-height: 1.5; color: #475569; }
+    
+    .cad-diagram { flex: 1; background: #FFFFFF; border: 1px solid #0B1F3A; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    
+    .cad-point { position: absolute; width: 12px; height: 12px; background: #D6A944; border-radius: 50%; }
+    .cad-label { position: absolute; font-family: 'IBM Plex Mono', monospace; font-size: 16px; }
+    .cad-label.id { color: #0B1F3A; font-weight: bold; transform: translate(16px, -16px); }
+    .cad-label.z { color: #007C83; transform: translate(16px, 4px); }
+    .cad-label.desc { color: #475569; transform: translate(16px, 24px); }
+    
+    .grid-line-h { position: absolute; width: 100%; height: 1px; background: #E2E8F0; top: 50%; left: 0; z-index: 0; }
+    .grid-line-v { position: absolute; width: 1px; height: 100%; background: #E2E8F0; left: 50%; top: 0; z-index: 0; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Geração automática de pontos</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div style="display: flex; gap: 24px;">
+        <div class="info-box" style="flex: 1;">
+          <h3>Padronização Visual</h3>
+          <p>A rotina garante que a identificação, a cota e a descrição sejam inseridas sempre na mesma posição relativa ao ponto, com a mesma altura de texto e no layer correto.</p>
+        </div>
+        <div class="info-box" style="flex: 1; border-left-color: #D6A944;">
+          <h3>Evitando Sobreposição</h3>
+          <p>Em áreas densas, a automação pode incluir regras para afastar textos ou utilizar blocos com atributos que facilitam o ajuste manual posterior.</p>
+        </div>
+      </div>
+      
+      <div class="cad-diagram">
+        <div class="grid-line-h"></div>
+        <div class="grid-line-v"></div>
+        
+        <div style="position: absolute; top: 50%; left: 30%; z-index: 1;">
+          <div class="cad-point"></div>
+          <div class="cad-label id">101</div>
+          <div class="cad-label z">24.32</div>
+          <div class="cad-label desc">POSTE</div>
+        </div>
+        
+        <div style="position: absolute; top: 30%; left: 70%; z-index: 1;">
+          <div class="cad-point"></div>
+          <div class="cad-label id">102</div>
+          <div class="cad-label z">24.87</div>
+          <div class="cad-label desc">EDIFICACAO</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>20 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    
+    .conclusion-box { background: #FFFFFF; border: 1px solid #0B1F3A; padding: 40px; width: 100%; max-width: 1000px; text-align: center; border-top: 8px solid #007C83; }
+    
+    .conclusion-box h3 { font-size: 28px; color: #0B1F3A; margin-bottom: 24px; }
+    
+    .flow-chain { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+    .chain-item { font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #0B1F3A; background: #E2E8F0; padding: 12px 20px; border-radius: 4px; }
+    .chain-arrow { color: #007C83; font-size: 24px; font-weight: bold; }
+    
+    .conclusion-text { font-size: 20px; line-height: 1.6; color: #475569; text-align: left; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Síntese da aula</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="conclusion-box">
+        <h3>A Cadeia de Valor Topográfica</h3>
+        
+        <div class="flow-chain">
+          <div class="chain-item">Dados Estruturados</div>
+          <div class="chain-arrow">→</div>
+          <div class="chain-item">Processamento</div>
+          <div class="chain-arrow">→</div>
+          <div class="chain-item">Desenho</div>
+          <div class="chain-arrow">→</div>
+          <div class="chain-item">Tabela</div>
+          <div class="chain-arrow">→</div>
+          <div class="chain-item">Mapa</div>
+          <div class="chain-arrow">→</div>
+          <div class="chain-item">Documentação</div>
+        </div>
+        
+        <div class="conclusion-text">
+          A automação conecta observações de campo a produtos técnicos por meio de dados estruturados e regras explícitas. Ela reduz operações repetitivas, facilita atualizações, aumenta a padronização e cria condições para auditoria. Entretanto, o resultado somente será confiável se o levantamento, o sistema de referência, as unidades, os códigos, a conectividade, os cálculos e os critérios de qualidade estiverem corretamente definidos.
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>30 / 31</span>
+    </div>
+  </div>
+</body>
+</html>
