@@ -46,6 +46,13 @@ Os arquivos abaixo foram gerados a partir do arquivo fornecido. Eles são materi
 | Script de geração dos arquivos | [Baixar Python](https://raw.githubusercontent.com/ErisonBarros/projeto_lev_topografico/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/dados_exercicio/perfil/gerar_arquivos_perfis.py) |
 | Instruções e premissas da base | [Ler README da base](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/dados_exercicio/perfil/README.md) |
 
+### Download completo
+
+Para baixar todos os arquivos de uma só vez, utilize o pacote abaixo. Ele contém o `pontos.txt` original, os CSVs derivados, a planilha XLSX, o README da base e o script Python de geração:
+
+- [Baixar pacote completo — `dados_perfil_topografico.zip`](../downloads/dados_perfil_topografico.zip)
+- [Baixar o pacote pelo GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/raw/erison.barros/docs/downloads/dados_perfil_topografico.zip)
+
 ## Entregas obrigatórias
 
 O grupo deverá entregar um pacote com o perfil longitudinal em CAD, o perfil longitudinal no QGIS, quatro seções transversais, a camada do eixo, a camada dos pontos de seção, o roteiro geométrico, a planilha de diferenças, o relatório técnico, os logs de processamento e o checklist de controle de qualidade.
