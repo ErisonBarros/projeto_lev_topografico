@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exercício integrador de automação de desenhos técnicos topográficos para grupos de cinco alunos.">
+  <title>Exercício em Grupo — Automação Topográfica · UFPE / LABAT</title>
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --teal: #007C83;
+      --gold: #D6A944;
+      --paper: #F5F7FA;
+      --ink: #1A2B4C;
+      --muted: #52657D;
+      --line: #D1D8E0;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+    header { background: var(--navy); color: var(--white); padding: 28px 6vw 34px; border-bottom: 6px solid var(--gold); }
+    .topline { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-bottom: 38px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #B9C8D9; }
+    .topline a { color: #C3E5E6; text-decoration: none; }
+    .topline a:hover { color: var(--white); text-decoration: underline; }
+    h1 { max-width: 980px; margin: 0; font-size: clamp(32px, 5vw, 62px); line-height: 1.04; letter-spacing: -.025em; }
+    .lead { max-width: 820px; margin: 22px 0 0; color: #DCE7F1; font-size: clamp(18px, 2vw, 24px); }
+    main { max-width: 1180px; margin: 0 auto; padding: 34px 24px 64px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+    .button { display: inline-block; padding: 12px 16px; border: 1px solid var(--teal); color: var(--navy); background: var(--white); text-decoration: none; font-weight: 700; }
+    .button.primary { background: var(--teal); color: var(--white); }
+    .button:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 34px; align-items: start; }
+    article { min-width: 0; }
+    section { margin: 0 0 38px; padding-top: 4px; }
+    h2 { color: var(--navy); font-size: 30px; line-height: 1.15; margin: 0 0 18px; border-left: 5px solid var(--teal); padding-left: 14px; }
+    h3 { color: var(--navy); font-size: 21px; margin: 26px 0 10px; }
+    p { margin: 0 0 14px; }
+    strong { color: var(--navy); }
+    .callout { padding: 18px 20px; margin: 18px 0; background: #E7F2F2; border-left: 5px solid var(--teal); }
+    .callout.warning { background: #FFF8E7; border-left-color: var(--gold); }
+    .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; counter-reset: step; }
+    .step { counter-increment: step; padding: 16px 18px 16px 58px; background: var(--white); border: 1px solid var(--line); position: relative; min-height: 92px; }
+    .step::before { content: counter(step, decimal-leading-zero); position: absolute; left: 18px; top: 17px; font-size: 21px; font-weight: 700; color: var(--gold); font-family: monospace; }
+    .step strong { display: block; margin-bottom: 3px; }
+    table { width: 100%; border-collapse: collapse; background: var(--white); margin: 14px 0 20px; font-size: 15px; }
+    th { background: var(--teal); color: var(--white); text-align: left; padding: 12px 13px; border: 1px solid var(--teal); }
+    td { padding: 11px 13px; border: 1px solid var(--line); vertical-align: top; }
+    tr:nth-child(even) td { background: #FAFCFD; }
+    code, pre { font-family: "Courier New", monospace; }
+    code { color: var(--teal); font-weight: 700; }
+    pre { margin: 14px 0 20px; padding: 18px; background: var(--navy); color: #E7F2F2; overflow-x: auto; border-left: 4px solid var(--gold); }
+    aside { position: sticky; top: 20px; background: var(--navy); color: var(--white); padding: 22px; }
+    aside h2 { color: var(--white); font-size: 22px; border-left-color: var(--gold); margin-bottom: 16px; }
+    aside a { display: block; color: #C3E5E6; padding: 8px 0; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.16); }
+    aside a:hover { color: var(--white); }
+    .meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 28px 0 38px; }
+    .meta div { padding: 16px; background: var(--white); border-top: 4px solid var(--gold); border-bottom: 1px solid var(--line); }
+    .meta strong { display: block; font-size: 22px; }
+    .meta span { color: var(--muted); font-size: 13px; }
+    footer { background: var(--navy); color: #C3D0DE; padding: 24px 6vw; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer a { color: #C3E5E6; }
+    @media (max-width: 840px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; order: -1; }
+      .meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      header { padding-left: 22px; padding-right: 22px; }
+      .topline { align-items: flex-start; flex-direction: column; gap: 8px; }
+      main { padding-left: 14px; padding-right: 14px; }
+      .steps { grid-template-columns: 1fr; }
+      .meta { grid-template-columns: 1fr 1fr; }
+      table { font-size: 13px; }
+      th, td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topline">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span><a href="https://github.com/ErisonBarros/projeto_lev_topografico">Repositório no GitHub</a></span>
+    </div>
+    <h1>Exercício em grupo: automação de perfis topográficos</h1>
+    <p class="lead">Perfil longitudinal no CAD e no QGIS, estaqueamento de 20 em 20 metros, seções transversais com apoio do PE3D e comparação de cotas.</p>
+  </header>
+
+  <main>
+    <div class="actions">
+      <a class="button primary" href="https://erisonbarros.github.io/projeto_lev_topografico/downloads/dados_perfil_topografico.zip">Baixar todos os dados (ZIP)</a>
+      <a class="button" href="https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/exercicio_perfis_topograficos_cad_qgis.md">Enunciado completo no GitHub</a>
+      <a class="button" href="https://erisonbarros.github.io/projeto_lev_topografico/apresentacao/automacao-topografica/">Abrir apresentação da aula</a>
+    </div>
+
+    <div class="meta">
+      <div><strong>5</strong><span>alunos por grupo</span></div>
+      <div><strong>20 m</strong><span>intervalo do estaqueamento</span></div>
+      <div><strong>500 m</strong><span>intervalo das seções</span></div>
+      <div><strong>±10 m</strong><span>largura mínima transversal</span></div>
+    </div>
+
+    <div class="layout">
+      <article>
+        <section id="problema">
+          <h2>1. Situação-problema</h2>
+          <p>Uma equipe recebeu um conjunto de pontos de um eixo topográfico. O contratante necessita de um perfil longitudinal para avaliar o comportamento altimétrico do trecho e de perfis transversais para apoiar uma análise preliminar de implantação, drenagem ou terraplenagem.</p>
+          <p>Além das cotas fornecidas no eixo, existem pontos coletados ou extraídos de uma base de referência do <strong>PE3D</strong>. O grupo deverá comparar as cotas, identificar diferenças e documentar a origem dos dados.</p>
+          <div class="callout"><strong>Pergunta central:</strong> as cotas do eixo fornecido e as cotas coletadas ou extraídas do PE3D são compatíveis dentro da tolerância definida pelo grupo?</div>
+        </section>
+
+        <section id="objetivos">
+          <h2>2. Objetivos</h2>
+          <div class="steps">
+            <div class="step"><strong>Interpretar a base</strong>Separar os pontos do eixo e o conjunto de pontos coletados ou associado ao PE3D.</div>
+            <div class="step"><strong>Calcular a geometria</strong>Obter estação acumulada, distância, azimute, ΔZ e declividade.</div>
+            <div class="step"><strong>Gerar o longitudinal</strong>Criar o perfil no CAD e no QGIS com estaqueamento regular.</div>
+            <div class="step"><strong>Gerar seções</strong>Construir seções nas estações 0+000, 0+500, 1+000 e 1+500.</div>
+            <div class="step"><strong>Extrair cotas</strong>Consultar o PE3D em 10 m à esquerda, no eixo e 10 m à direita.</div>
+            <div class="step"><strong>Comparar resultados</strong>Preencher a planilha e discutir as diferenças de cota.</div>
+          </div>
+        </section>
+
+        <section id="dados">
+          <h2>3. Dados e premissas</h2>
+          <p>O arquivo original possui 166 registros sem cabeçalho no formato <code>ID,X,Y,Z</code>. Os grupos deverão preservar o arquivo bruto e trabalhar sobre uma cópia com cabeçalho.</p>
+          <table>
+            <thead><tr><th>IDs</th><th>Interpretação inicial</th><th>Verificação exigida</th></tr></thead>
+            <tbody>
+              <tr><td>1–87</td><td>Pontos sequenciais do eixo em coordenadas projetadas de grande magnitude.</td><td>Conferir sequência, unidade, CRS e sentido de progressão.</td></tr>
+              <tr><td>88–166</td><td>Pontos coletados ou extraídos do PE3D em coordenadas locais.</td><td>Conferir correspondência espacial, transformação e origem da cota.</td></tr>
+            </tbody>
+          </table>
+          <div class="callout warning"><strong>Atenção:</strong> a correspondência entre os dois conjuntos é uma hipótese inicial. Ela deve ser confirmada no QGIS antes da interpretação da diferença de cota.</div>
+        </section>
+
+        <section id="procedimento">
+          <h2>4. Procedimento obrigatório</h2>
+          <h3>4.1 Preparação e eixo</h3>
+          <p>Preserve <code>pontos.txt</code> como dado bruto. Considere inicialmente os pontos 1 a 87 como eixo, crie uma linha respeitando a ordem crescente dos IDs e calcule a estação acumulada pela distância horizontal entre pontos consecutivos.</p>
+          <p>A estação inicial é <strong>0+000,00</strong> no ponto 1. A extensão calculada do eixo é aproximadamente <strong>1.717,82 m</strong>, valor que deverá ser recalculado e conferido pelo grupo.</p>
+
+          <h3>4.2 Estaqueamento de 20 em 20 metros</h3>
+          <p>Gere as progressivas 0+000,00, 0+020,00, 0+040,00 e assim sucessivamente até o final do eixo. A última progressiva regular prevista é 1+700,00, seguida da estação final aproximada do eixo.</p>
+          <pre>Estação:  s
+ t = (s - Est_A) / (Est_B - Est_A)
+ X_s = X_A + t (X_B - X_A)
+ Y_s = Y_A + t (Y_B - Y_A)
+ Z_s = Z_A + t (Z_B - Z_A)</pre>
+          <p>No CAD, crie pontos ou blocos em um layer próprio e rotule estaca e cota. No QGIS, crie ou carregue a camada de pontos ao longo da linha e confira sua coincidência espacial com o eixo.</p>
+
+          <h3>4.3 Perfil longitudinal no CAD e no QGIS</h3>
+          <p>Produza o perfil longitudinal com estação no eixo horizontal e cota no eixo vertical. Informe escalas horizontal e vertical, unidades, referência altimétrica, fonte, título, legenda, grade e identificação do grupo.</p>
+          <p>No QGIS, se houver uma superfície PE3D disponível, extraia também a cota amostrada nas estações e compare o perfil interpolado com o perfil da superfície. Registre resolução, densidade e método de amostragem.</p>
+
+          <h3>4.4 Seções transversais a cada 500 metros</h3>
+          <p>Crie seções nas estações 0+000, 0+500, 1+000 e 1+500. Para cada seção, gere os alvos com offset de -10,00 m, 0,00 m e +10,00 m, correspondentes à esquerda, eixo e direita segundo o sentido de progressão.</p>
+          <table>
+            <thead><tr><th>Estação</th><th>Estaca</th><th>Offsets mínimos</th></tr></thead>
+            <tbody>
+              <tr><td>0,00 m</td><td>0+000,00</td><td>-10,00 m · 0,00 m · +10,00 m</td></tr>
+              <tr><td>500,00 m</td><td>0+500,00</td><td>-10,00 m · 0,00 m · +10,00 m</td></tr>
+              <tr><td>1.000,00 m</td><td>1+000,00</td><td>-10,00 m · 0,00 m · +10,00 m</td></tr>
+              <tr><td>1.500,00 m</td><td>1+500,00</td><td>-10,00 m · 0,00 m · +10,00 m</td></tr>
+            </tbody>
+          </table>
+          <p>Extraia as cotas no PE3D para cada alvo e calcule <code>ΔZ = Z_PE3D − Z_eixo</code>. Quando não houver dado, use <code>N/A</code> e justifique. Não substitua ausência por zero.</p>
+
+          <h3>4.5 Roteiro geométrico</h3>
+          <p>Para cada segmento entre pontos consecutivos do eixo, apresente ponto inicial, ponto final, estação, azimute, distância horizontal, cota inicial, cota final, ΔZ e declividade.</p>
+          <pre>Distância = √((X₂ − X₁)² + (Y₂ − Y₁)²)
+Azimute = atan2(ΔX, ΔY)
+Declividade (%) = ΔZ / Distância × 100</pre>
+          <p>Declare a convenção angular. A recomendação é utilizar azimute contado a partir do Norte, no sentido horário, normalizado entre 0° e 360°.</p>
+        </section>
+
+        <section id="planilha">
+          <h2>5. Planilha de comparação de cotas</h2>
+          <p>Utilize a planilha de apoio para registrar os pontos do eixo, o conjunto coletado ou PE3D, o estaqueamento, as seções e o roteiro. A aba de comparação deverá conter ID coletado, ID fornecido, cota fornecida, cota coletada, diferença de cota e resíduo horizontal.</p>
+          <table>
+            <thead><tr><th>Campo</th><th>Descrição</th></tr></thead>
+            <tbody>
+              <tr><td><code>Cota fornecida (m)</code></td><td>Cota presente no conjunto do eixo.</td></tr>
+              <tr><td><code>Cota coletada/PE3D (m)</code></td><td>Cota observada, amostrada ou extraída da fonte indicada.</td></tr>
+              <tr><td><code>Diferença Z (m)</code></td><td>Cota coletada ou PE3D menos cota fornecida.</td></tr>
+              <tr><td><code>Resíduo XY (m)</code></td><td>Distância horizontal após o pareamento dos pontos.</td></tr>
+              <tr><td><code>Observação</code></td><td>Justificativa, alerta, erro, rejeição ou pendência.</td></tr>
+            </tbody>
+          </table>
+          <p>Calcule média, desvio-padrão, maior diferença absoluta e quantidade de pontos acima da tolerância definida. Explique se a diferença representa erro, tendência sistemática, efeito de interpolação ou incompatibilidade de referência.</p>
+        </section>
+
+        <section id="entregas">
+          <h2>6. Entregas</h2>
+          <table>
+            <thead><tr><th>Produto</th><th>Conteúdo mínimo</th></tr></thead>
+            <tbody>
+              <tr><td>Perfil longitudinal CAD</td><td>Arquivo editável e PDF com estaqueamento, cotas, escalas, grade, título e fonte.</td></tr>
+              <tr><td>Perfil longitudinal QGIS</td><td>Projeto, camada do eixo, estaqueamento, gráfico ou layout e metadados PE3D.</td></tr>
+              <tr><td>Perfis transversais</td><td>Quatro seções, cada uma com esquerda, eixo e direita, cotas e offsets.</td></tr>
+              <tr><td>Roteiro geométrico</td><td>Azimute, distância, cota inicial, cota final, ΔZ e declividade.</td></tr>
+              <tr><td>Planilha</td><td>Estaqueamento, seções, comparação de cotas, estatísticas e observações.</td></tr>
+              <tr><td>Relatório</td><td>Dados, CRS, método, cálculos, extração PE3D, resultados, QC e limitações.</td></tr>
+              <tr><td>Automação</td><td>Rotina AutoLISP, script Python, modelo QGIS ou procedimento reexecutável.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="avaliacao">
+          <h2>7. Avaliação</h2>
+          <table>
+            <thead><tr><th>Critério</th><th>Pontos</th></tr></thead>
+            <tbody>
+              <tr><td>Organização e preservação do dado bruto</td><td>8</td></tr>
+              <tr><td>Definição do eixo, estação e CRS</td><td>12</td></tr>
+              <tr><td>Estaqueamento de 20 em 20 m</td><td>12</td></tr>
+              <tr><td>Perfil longitudinal no CAD</td><td>15</td></tr>
+              <tr><td>Perfil longitudinal no QGIS</td><td>15</td></tr>
+              <tr><td>Seções de 500 m com offsets de ±10 m</td><td>12</td></tr>
+              <tr><td>Roteiro com azimute, distância e cotas</td><td>10</td></tr>
+              <tr><td>Planilha e diferenças de cota</td><td>8</td></tr>
+              <tr><td>Controle de qualidade e limitações</td><td>5</td></tr>
+              <tr><td>Relatório e apresentação</td><td>3</td></tr>
+              <tr><th>Total</th><th>100</th></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="qualidade">
+          <h2>8. Controle de qualidade</h2>
+          <p>Antes da entrega, confirme se a estação cresce no sentido correto, se as estacas estão a cada 20 m, se as quatro seções estão nas estações previstas, se os offsets têm sinal correto e se as cotas do PE3D possuem fonte e método documentados.</p>
+          <p>Compare IDs, estações e cotas entre CSV, CAD, QGIS, planilha e PDF. Registre as divergências. Nenhuma alteração posterior à automação deve permanecer sem registro.</p>
+          <div class="callout warning"><strong>Limite profissional:</strong> a interpolação da cota nas estacas regulares não substitui uma observação independente. A comparação de cotas exige conferência do pareamento, CRS, unidades e referência altimétrica.</div>
+        </section>
+      </article>
+
+      <aside>
+        <h2>Navegação</h2>
+        <a href="#problema">Situação-problema</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#dados">Dados e premissas</a>
+        <a href="#procedimento">Procedimento</a>
+        <a href="#planilha">Planilha de cotas</a>
+        <a href="#entregas">Entregas</a>
+        <a href="#avaliacao">Avaliação</a>
+        <a href="#qualidade">Controle de qualidade</a>
+        <a href="https://erisonbarros.github.io/projeto_lev_topografico/downloads/dados_perfil_topografico.zip">Baixar dados ZIP</a>
+        <a href="https://github.com/ErisonBarros/projeto_lev_topografico/tree/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/dados_exercicio/perfil">Abrir pasta de dados</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>Professor: Prof. Dr. Erison Rosa de Oliveira Barros · Engenharia Cartográfica e de Agrimensura</span>
+    <span><a href="https://erisonbarros.github.io/projeto_lev_topografico/">Voltar ao GitHub Pages</a></span>
+  </footer>
+</body>
+</html>
