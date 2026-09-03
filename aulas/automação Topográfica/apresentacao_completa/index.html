@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automatização de Desenhos Técnicos Topográficos e Cartográficos</title>
+  <style>
+    :root { --navy: #0B1F3A; --teal: #007C83; --gold: #D6A944; --paper: #F5F7FA; --muted: #475569; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: var(--navy); color: var(--paper); font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; }
+    header { min-height: 70px; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.18); gap: 18px; }
+    header h1 { margin: 0; font-size: 20px; line-height: 1.2; font-weight: 700; }
+    header span { color: var(--gold); font-size: 14px; font-weight: 700; white-space: nowrap; }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 18px 24px 12px; }
+    .viewer { width: min(1280px, 96vw); aspect-ratio: 16 / 9; background: #111827; border: 2px solid var(--teal); position: relative; }
+    iframe { width: 1280px; height: 720px; border: 0; transform-origin: top left; display: block; }
+    .controls { min-height: 70px; padding: 12px 28px 18px; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    button, a { border: 1px solid var(--teal); background: transparent; color: var(--paper); padding: 10px 16px; font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; }
+    button:hover, a:hover { background: var(--teal); }
+    button:disabled { opacity: .35; cursor: not-allowed; }
+    #counter { min-width: 78px; text-align: center; font-size: 14px; color: var(--gold); font-weight: 700; }
+    .progress { width: min(360px, 44vw); height: 5px; background: rgba(255,255,255,.18); }
+    .progress span { display: block; height: 100%; width: 3.23%; background: var(--gold); }
+    footer { padding: 8px 28px 18px; text-align: center; color: rgba(245,247,250,.78); font-size: 12px; }
+    footer a { border: 0; padding: 0; color: var(--teal); font-size: 12px; }
+    @media (max-width: 720px) {
+      header { align-items: flex-start; flex-direction: column; }
+      header span { white-space: normal; }
+      main { padding-left: 6px; padding-right: 6px; }
+      .controls { padding-left: 8px; padding-right: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Automatização de Desenhos Técnicos Topográficos e Cartográficos</h1>
+    <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+  </header>
+  <main>
+    <div class="viewer" id="viewer">
+      <iframe id="slide" title="Apresentação de slides" src="s01_titulo.html"></iframe>
+    </div>
+  </main>
+  <nav class="controls" aria-label="Controles da apresentação">
+    <button id="prev" type="button">← Anterior</button>
+    <span id="counter">1 / 31</span>
+    <button id="next" type="button">Próximo →</button>
+    <button id="full" type="button">Tela cheia</button>
+    <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+  </nav>
+  <footer>
+    Use as teclas ← e → para navegar. <a href="https://github.com/ErisonBarros/projeto_lev_topografico/tree/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/apresentacao_completa" target="_blank" rel="noopener">Arquivos no GitHub</a> · <a href="https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/" target="_blank" rel="noopener">Página do LABAT</a>
+  </footer>
+  <script>
+    const slides = [
+      's01_titulo.html','s02_objetivos.html','s03_problema_manual.html','s04_o_que_e_automacao.html','s05_automacao_topografia.html','s06_automacao_cartografia.html','s07_fluxo_trabalho.html','s08_dados_campo.html','s09_dados_estruturados.html','s10_cad.html','s11_autocad.html','s12_autolisp.html','s13_python.html','s14_qgis.html','s15_integracao.html','s16_csv_cad.html','s17_exemplo_pratico.html','s18_codigo_autolisp.html','s19_codigo_python.html','s20_geracao_pontos.html','s21_geracao_linhas.html','s22_azimute.html','s23_tabela.html','s24_planta.html','s25_qualidade.html','s26_comparacao.html','s27_exercicio.html','s28_projeto_final.html','s29_boas_praticas.html','s30_conclusao.html','s31_desafio.html'
+    ];
+    let current = 0;
+    const frame = document.getElementById('slide');
+    const viewer = document.getElementById('viewer');
+    const counter = document.getElementById('counter');
+    const bar = document.getElementById('bar');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    function fitFrame() {
+      const scale = viewer.clientWidth / 1280;
+      frame.style.transform = `scale(${scale})`;
+      frame.style.marginBottom = `${720 * scale - 720}px`;
+      frame.style.marginRight = `${1280 * scale - 1280}px`;
+    }
+    function show(index) {
+      current = Math.max(0, Math.min(slides.length - 1, index));
+      frame.src = slides[current];
+      counter.textContent = `${current + 1} / ${slides.length}`;
+      bar.style.width = `${((current + 1) / slides.length) * 100}%`;
+      prev.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+    }
+    prev.addEventListener('click', () => show(current - 1));
+    next.addEventListener('click', () => show(current + 1));
+    document.getElementById('full').addEventListener('click', () => viewer.requestFullscreen && viewer.requestFullscreen());
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') show(current - 1);
+      if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') { event.preventDefault(); show(current + 1); }
+    });
+    window.addEventListener('resize', fitFrame);
+    show(0);
+    fitFrame();
+  </script>
+</body>
+</html>
