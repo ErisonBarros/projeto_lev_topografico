@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    
+    table { width: 100%; border-collapse: collapse; background: #FFFFFF; font-size: 18px; border: 1px solid #0B1F3A; }
+    th { background: #007C83; color: #FFFFFF; font-weight: 600; text-align: left; padding: 16px 24px; border-bottom: 2px solid #0B1F3A; border-right: 1px solid #0B1F3A; }
+    th:last-child { border-right: none; }
+    td { padding: 16px 24px; border-bottom: 1px solid #D1D8E0; border-right: 1px solid #D1D8E0; color: #1A2B4C; }
+    td:last-child { border-right: none; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #F8FAFC; }
+    
+    .weight-cell { font-weight: 700; color: #0B1F3A; text-align: right; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Projeto final da disciplina</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Critério de Avaliação</th>
+            <th>Descrição</th>
+            <th style="text-align: right;">Peso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Estrutura e Validação</strong></td>
+            <td>Qualidade do CSV, tratamento de erros e duplicidades.</td>
+            <td class="weight-cell">20%</td>
+          </tr>
+          <tr>
+            <td><strong>Correção Geométrica</strong></td>
+            <td>Cálculos corretos, transformação de CRS e conectividade.</td>
+            <td class="weight-cell">20%</td>
+          </tr>
+          <tr>
+            <td><strong>Implementação</strong></td>
+            <td>Lógica da automação (AutoLISP, Python ou QGIS).</td>
+            <td class="weight-cell">20%</td>
+          </tr>
+          <tr>
+            <td><strong>Organização CAD</strong></td>
+            <td>Uso adequado de layers, blocos, estilos e folha técnica.</td>
+            <td class="weight-cell">15%</td>
+          </tr>
+          <tr>
+            <td><strong>Controle de Qualidade</strong></td>
+            <td>Detecção de inconsistências e relatório de validação.</td>
+            <td class="weight-cell">15%</td>
+          </tr>
+          <tr>
+            <td><strong>Documentação</strong></td>
+            <td>Memorial descritivo, log de execução e reprodutibilidade.</td>
+            <td class="weight-cell">10%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>28 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

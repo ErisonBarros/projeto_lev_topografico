@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .text-col { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    .code-col { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    
+    .info-box { border-left: 4px solid #007C83; padding: 20px; background: #FFFFFF; }
+    .info-box h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 10px; }
+    .info-box p { font-size: 16px; line-height: 1.5; color: #475569; }
+    
+    .code-block { background: #0B1F3A; color: #F5F7FA; font-family: 'IBM Plex Mono', monospace; padding: 24px; border-radius: 4px; font-size: 16px; line-height: 1.6; overflow-x: auto; }
+    .code-highlight { color: #D6A944; font-weight: 600; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Dados estruturados</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="text-col">
+        <div class="info-box">
+          <h3>O Contrato de Dados</h3>
+          <p>A automação exige conhecer os campos, tipos, unidades, ordem e significado dos dados. Um arquivo CSV é o contrato mínimo entre o campo e o escritório.</p>
+        </div>
+        <div class="info-box">
+          <h3>Referência Espacial (CRS)</h3>
+          <p>Um número como <code>289543.125</code> não tem significado sem um CRS. Deve-se indicar o referencial (ex: SIRGAS 2000), a projeção (ex: UTM) e o sistema de altitudes.</p>
+        </div>
+        <div class="info-box" style="border-left-color: #D6A944;">
+          <h3>Regras de Validação</h3>
+          <p>Não misturar unidades, não inserir símbolos em campos numéricos e não usar vírgula decimal em arquivos delimitados por vírgula sem regra explícita.</p>
+        </div>
+      </div>
+      
+      <div class="code-col">
+        <div class="code-block">
+ID,X,Y,Z,CODIGO,DESCRICAO
+1,289543.125,9102345.521,24.32,PV,POSTE
+2,289550.328,9102352.781,24.87,ED,EDIFICACAO
+3,289565.721,9102360.115,25.13,PV,POSTE
+<span class="code-highlight">4,289578.402,9102348.900,24.61,ARV,ARVORE</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>9 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

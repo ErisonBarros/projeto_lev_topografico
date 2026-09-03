@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+    
+    .definition { font-size: 24px; line-height: 1.5; color: #475569; border-left: 4px solid #0B1F3A; padding-left: 24px; }
+    .definition strong { color: #0B1F3A; }
+    
+    .flow-diagram { display: flex; align-items: center; justify-content: space-between; background: #FFFFFF; border: 1px solid #0B1F3A; padding: 40px; flex: 1; }
+    
+    .node { border: 1px solid #0B1F3A; padding: 20px; text-align: center; width: 200px; background: #F5F7FA; }
+    .node.core { background: #0B1F3A; color: #FFFFFF; border-color: #007C83; }
+    .node.core h3 { color: #FFFFFF; }
+    
+    .node h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 12px; }
+    .node p { font-size: 16px; color: #475569; }
+    .node.core p { color: #E2E8F0; }
+    
+    .arrow { color: #007C83; font-size: 32px; font-weight: bold; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>O que é automação?</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="definition">
+        Automação é o uso de <strong>regras, ferramentas ou programas</strong> para executar, controlar ou repetir uma sequência de operações com pouca intervenção manual. Em Topografia, a automação começa pela transformação de observações em <strong>dados estruturados</strong>.
+      </div>
+      
+      <div class="flow-diagram">
+        <div class="node">
+          <h3>Entradas</h3>
+          <p>Dados brutos, parâmetros e restrições.</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="node core">
+          <h3>Regras & Processamento</h3>
+          <p>Scripts, algoritmos e validações lógicas.</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="node">
+          <h3>Saídas</h3>
+          <p>Plantas, tabelas, mapas e relatórios.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>4 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

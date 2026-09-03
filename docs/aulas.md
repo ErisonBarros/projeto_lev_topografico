@@ -23,7 +23,7 @@ Aula teórico-prática sobre a transformação de dados de levantamentos em prod
 - Controle de qualidade, validação, rastreabilidade e reprodutibilidade
 - Exercícios práticos e projeto de geração de planta topográfica
 
-[📖 Abrir material completo no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/aula_automatizacao_desenhos_topograficos.md){target=_blank} · [▶️ Apresentação HTML — 31 slides](https://erisonbarros.github.io/projeto_lev_topografico/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/apresentacao_completa/){target=_blank} · [📁 Arquivos no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/tree/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/apresentacao_completa){target=_blank} · [🌐 Subpágina GitHub Pages — LABAT](https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/){target=_blank}
+[📖 Abrir material completo no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/blob/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/aula_automatizacao_desenhos_topograficos.md){target=_blank} · [▶️ Apresentação HTML — 31 slides](https://erisonbarros.github.io/projeto_lev_topografico/apresentacao/automacao-topografica/){target=_blank} · [📁 Arquivos no GitHub](https://github.com/ErisonBarros/projeto_lev_topografico/tree/erison.barros/aulas/automa%C3%A7%C3%A3o%20Topogr%C3%A1fica/apresentacao_completa){target=_blank} · [🌐 Subpágina GitHub Pages — LABAT](https://erisonbarros.github.io/projeto_lev_topografico/sobre-labat/){target=_blank}
 
 ### 📐 Planejamento de Obra Topográfica *(nova)*
 

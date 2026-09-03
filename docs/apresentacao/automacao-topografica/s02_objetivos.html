@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .column { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    
+    .obj-box { border-left: 4px solid #007C83; padding: 20px; background: #FFFFFF; border-top: 1px solid #0B1F3A; border-right: 1px solid #0B1F3A; border-bottom: 1px solid #0B1F3A; }
+    .obj-box h3 { font-size: 24px; color: #0B1F3A; margin-bottom: 12px; }
+    .obj-box p { font-size: 18px; line-height: 1.5; color: #475569; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Objetivos da aula</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="column">
+        <div class="obj-box">
+          <h3>1. Estruturar Dados</h3>
+          <p>Compreender a relação entre dados topográficos brutos, contratos de dados (CSV) e entidades CAD/SIG.</p>
+        </div>
+        <div class="obj-box">
+          <h3>2. Automatizar Tarefas</h3>
+          <p>Identificar atividades repetitivas e aplicar scripts para criar pontos, linhas, polígonos, textos e cotas automaticamente.</p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="obj-box">
+          <h3>3. Integrar Ferramentas</h3>
+          <p>Utilizar AutoLISP, Python e QGIS para processar dados geoespaciais e gerar plantas e memoriais.</p>
+        </div>
+        <div class="obj-box">
+          <h3>4. Controlar Qualidade</h3>
+          <p>Identificar erros e inconsistências nos dados antes da geração do desenho, desenvolvendo fluxos reproduzíveis.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>2 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

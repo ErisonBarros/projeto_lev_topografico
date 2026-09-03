@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+    
+    .info-box { border-left: 4px solid #007C83; padding: 20px; background: #FFFFFF; }
+    .info-box h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 10px; }
+    .info-box p { font-size: 16px; line-height: 1.5; color: #475569; }
+    
+    table { width: 100%; border-collapse: collapse; background: #FFFFFF; font-size: 16px; border: 1px solid #0B1F3A; }
+    th { background: #007C83; color: #FFFFFF; font-weight: 600; text-align: left; padding: 16px 24px; border-bottom: 2px solid #0B1F3A; border-right: 1px solid #0B1F3A; }
+    th:last-child { border-right: none; }
+    td { padding: 16px 24px; border-bottom: 1px solid #D1D8E0; border-right: 1px solid #D1D8E0; color: #1A2B4C; font-family: 'IBM Plex Mono', monospace; }
+    td:last-child { border-right: none; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #F8FAFC; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Geração automática de tabela</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div style="display: flex; gap: 24px;">
+        <div class="info-box" style="flex: 1;">
+          <h3>Fonte Única de Verdade</h3>
+          <p>A tabela de coordenadas (XLSX) e o quadro inserido na planta (DXF) devem ser gerados a partir da mesma base validada, eliminando o risco de divergência por redigitação.</p>
+        </div>
+        <div class="info-box" style="flex: 1; border-left-color: #D6A944;">
+          <h3>Metadados</h3>
+          <p>A tabela deve incluir colunas de metadados, como o CRS e o layer de destino, para facilitar a conferência numérica e a auditoria do projeto.</p>
+        </div>
+      </div>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>X (m)</th>
+            <th>Y (m)</th>
+            <th>Z (m)</th>
+            <th>CÓDIGO</th>
+            <th>DESCRIÇÃO</th>
+            <th>LAYER</th>
+            <th>CRS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>289543.125</td>
+            <td>9102345.521</td>
+            <td>24.32</td>
+            <td>PV</td>
+            <td>POSTE</td>
+            <td>TOPO_POSTE</td>
+            <td>EPSG:31985</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>289550.328</td>
+            <td>9102352.781</td>
+            <td>24.87</td>
+            <td>ED</td>
+            <td>EDIFICACAO</td>
+            <td>TOPO_EDIFICACAO</td>
+            <td>EPSG:31985</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>289565.721</td>
+            <td>9102360.115</td>
+            <td>25.13</td>
+            <td>PV</td>
+            <td>POSTE</td>
+            <td>TOPO_POSTE</td>
+            <td>EPSG:31985</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>23 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

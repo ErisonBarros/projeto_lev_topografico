@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .task-col { flex: 1; background: #FFFFFF; border: 1px solid #0B1F3A; padding: 32px; border-top: 4px solid #007C83; }
+    .task-col h3 { font-size: 24px; color: #0B1F3A; margin-bottom: 20px; }
+    
+    ol { list-style-position: inside; margin-left: 10px; }
+    li { font-size: 18px; margin-bottom: 16px; line-height: 1.5; color: #475569; }
+    li strong { color: #0B1F3A; }
+    
+    .deliverables-col { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+    
+    .deliv-box { background: #E2E8F0; border-left: 4px solid #0B1F3A; padding: 20px; }
+    .deliv-box h4 { font-size: 18px; color: #0B1F3A; margin-bottom: 8px; }
+    .deliv-box p { font-size: 16px; color: #475569; font-family: 'IBM Plex Mono', monospace; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Exercício prático em duplas</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="task-col">
+        <h3>Roteiro de Execução</h3>
+        <ol>
+          <li><strong>Receber</strong> o arquivo <code>PONTOS.csv</code>.</li>
+          <li><strong>Validar</strong> os dados (identificar erros e duplicidades).</li>
+          <li><strong>Importar</strong> os pontos para o ambiente escolhido (CAD, QGIS ou Python).</li>
+          <li><strong>Criar</strong> layers automaticamente conforme o código.</li>
+          <li><strong>Gerar</strong> textos (ID, cota, descrição) e símbolos.</li>
+          <li><strong>Calcular</strong> distâncias e azimutes (se houver conectividade).</li>
+          <li><strong>Exportar</strong> os resultados.</li>
+        </ol>
+      </div>
+      
+      <div class="deliverables-col">
+        <div class="deliv-box">
+          <h4>1. Planta Topográfica</h4>
+          <p>planta.dxf (com layers e textos organizados)</p>
+        </div>
+        <div class="deliv-box">
+          <h4>2. Tabela de Coordenadas</h4>
+          <p>coordenadas.xlsx (com metadados e CRS)</p>
+        </div>
+        <div class="deliv-box">
+          <h4>3. Visualização Geográfica</h4>
+          <p>pontos.kml (transformado para WGS84)</p>
+        </div>
+        <div class="deliv-box" style="border-left-color: #D6A944;">
+          <h4>4. Documentação</h4>
+          <p>relatorio_validacao.txt (erros encontrados)</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>27 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

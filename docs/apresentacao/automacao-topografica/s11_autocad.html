@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .image-col { flex: 1.2; display: flex; align-items: center; justify-content: center; }
+    .cad-mockup { width: 100%; height: 360px; background: #0B1F3A; border: 1px solid #007C83; position: relative; overflow: hidden; }
+    .cad-toolbar { height: 30px; background: #E2E8F0; border-bottom: 1px solid #0B1F3A; display: flex; align-items: center; padding: 0 10px; gap: 10px; }
+    .cad-tool { width: 40px; height: 16px; background: #475569; border-radius: 2px; }
+    .cad-canvas { position: absolute; top: 30px; left: 0; right: 0; bottom: 0; background: #0B1F3A; background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px; }
+    
+    .text-col { flex: 0.8; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+    
+    .info-box { border-left: 4px solid #007C83; padding: 20px; background: #FFFFFF; }
+    .info-box h3 { font-size: 20px; color: #0B1F3A; margin-bottom: 10px; }
+    .info-box p { font-size: 16px; line-height: 1.5; color: #475569; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>AutoCAD no projeto topográfico</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="image-col">
+        <div class="cad-mockup">
+          <div class="cad-toolbar">
+            <div class="cad-tool"></div>
+            <div class="cad-tool"></div>
+            <div class="cad-tool"></div>
+          </div>
+          <div class="cad-canvas">
+            <!-- Abstract CAD elements -->
+            <div style="position: absolute; top: 100px; left: 150px; width: 6px; height: 6px; background: #D6A944; border-radius: 50%;"></div>
+            <div style="position: absolute; top: 90px; left: 165px; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">P-101</div>
+            
+            <div style="position: absolute; top: 200px; left: 300px; width: 6px; height: 6px; background: #D6A944; border-radius: 50%;"></div>
+            <div style="position: absolute; top: 190px; left: 315px; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">P-102</div>
+            
+            <div style="position: absolute; top: 103px; left: 153px; width: 180px; height: 2px; background: #007C83; transform-origin: left center; transform: rotate(33.7deg);"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-col">
+        <div class="info-box">
+          <h3>O Papel do CAD</h3>
+          <p>O AutoCAD é utilizado para construir e editar desenhos técnicos com foco em entidades geométricas, layers, estilos, blocos, cotas e folhas de impressão.</p>
+        </div>
+        <div class="info-box">
+          <h3>Limites da Ferramenta</h3>
+          <p>O CAD desenha o que é comandado. Ele não valida se a coordenada está no CRS correto ou se a cota é fisicamente plausível. A validação deve ocorrer antes.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>11 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

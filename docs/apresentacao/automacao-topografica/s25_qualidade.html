@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background: #F5F7FA;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .header { margin-bottom: 22px; }
+    h2 {
+      font-size: 34px;
+      color: #0B1F3A;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    .divider { width: 56px; height: 4px; background: #D6A944; border-radius:2px; }
+
+    .content { flex: 1; display: flex; gap: 28px; align-items: stretch; }
+
+    .checklist-col {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid #0B1F3A;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 0; /* keep flex children from overflowing */
+    }
+    .checklist-col h3 {
+      font-size: 20px;
+      color: #0B1F3A;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .check-item { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
+    .check-icon {
+      color: #007C83;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 2px;
+      flex: 0 0 22px;
+      text-align: center;
+    }
+    .check-text {
+      font-size: 15.5px;
+      line-height: 1.35;
+      color: #475569;
+    }
+    .check-text strong { color: #0B1F3A; font-weight: 700; }
+
+    .alert-box {
+      background: rgba(214, 169, 68, 0.09);
+      border-left: 4px solid #D6A944;
+      padding: 16px;
+      margin-top: 18px;
+      border-radius: 4px;
+    }
+    .alert-box p {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #0B1F3A;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 16px;
+      left: 28px;
+      right: 28px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #0B1F3A;
+      font-weight: 600;
+      border-top: 1px solid #007C83;
+      padding-top: 8px;
+    }
+
+    /* Slight responsiveness to ensure no overflow visually */
+    @media (max-height: 720px) {
+      .slide-container { height: 720px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Controle de qualidade</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="content">
+      <div class="checklist-col">
+        <h3>Validação de Dados (QA)</h3>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Campos obrigatórios:</strong> ID, X, Y, Z, Código e Descrição presentes.</div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Duplicidades:</strong> IDs únicos e coordenadas sem sobreposição não intencional.</div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Tipos e Limites:</strong> Valores numéricos válidos e dentro da faixa esperada para o CRS.</div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Dicionário:</strong> Códigos pertencentes à lista padronizada do projeto.</div>
+        </div>
+      </div>
+
+      <div class="checklist-col">
+        <h3>Controle do Produto (QC)</h3>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Geometria:</strong> Polígonos fechados e ausência de linhas cruzadas indesejadas.</div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Organização:</strong> Entidades nos layers corretos e com estilos padronizados.</div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Rastreabilidade:</strong> Log de execução, versão do código e parâmetros registrados.</div>
+        </div>
+
+        <div class="alert-box">
+          <p>A automação identifica padrões e inconsistências, mas não substitui a análise profissional. A correção de um erro sistemático exige consulta ao dado original.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>25 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

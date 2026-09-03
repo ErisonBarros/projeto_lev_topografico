@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    
+    .code-block { background: #0B1F3A; color: #F5F7FA; font-family: 'IBM Plex Mono', monospace; padding: 24px; border-radius: 4px; font-size: 16px; line-height: 1.6; overflow-x: auto; }
+    .code-comment { color: #007C83; }
+    .code-keyword { color: #D6A944; }
+    
+    .explanation { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .exp-item { background: #FFFFFF; border: 1px solid #D1D8E0; padding: 16px; border-left: 4px solid #0B1F3A; }
+    .exp-item code { font-family: 'IBM Plex Mono', monospace; color: #007C83; font-weight: 600; }
+    .exp-item p { font-size: 14px; color: #475569; margin-top: 8px; }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>AutoLISP: lógica dentro do CAD</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="code-block">
+<span class="code-comment">;;; Exemplo didático: inserir ponto e anotações</span>
+(<span class="code-keyword">defun</span> c:PTEXT (/ p id z desc)
+  (<span class="code-keyword">setq</span> p (getpoint "\nClique no ponto: "))
+  (<span class="code-keyword">setq</span> id (getstring T "\nIdentificação: "))
+  
+  <span class="code-comment">;; Cria entidade POINT no layer TOPO_PONTOS</span>
+  (entmake (list '(0 . "POINT") (cons 8 "TOPO_PONTOS") (cons 10 p)))
+  
+  <span class="code-comment">;; Cria entidade TEXT para o ID</span>
+  (entmake (list '(0 . "TEXT") (cons 8 "TOPO_ID") 
+                (cons 10 p) (cons 40 1.0) (cons 1 id)))
+  (<span class="code-keyword">princ</span>)
+)
+      </div>
+      
+      <div class="explanation">
+        <div class="exp-item">
+          <code>(defun c:PTEXT ...)</code>
+          <p>Define o comando PTEXT e declara variáveis locais. O prefixo c: transforma a função em um comando digitável no AutoCAD.</p>
+        </div>
+        <div class="exp-item">
+          <code>(setq p (getpoint ...))</code>
+          <p>Solicita ao usuário uma posição e armazena uma lista com as coordenadas X, Y e Z na variável p.</p>
+        </div>
+        <div class="exp-item">
+          <code>(entmake (list ...))</code>
+          <p>Cria uma entidade gráfica diretamente no banco de dados do desenho, sem depender da interface de comandos.</p>
+        </div>
+        <div class="exp-item">
+          <code>(cons 10 p)</code>
+          <p>Associa a coordenada (variável p) ao código DXF 10, que representa o ponto de inserção da entidade.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>12 / 31</span>
+    </div>
+  </div>
+</body>
+</html>

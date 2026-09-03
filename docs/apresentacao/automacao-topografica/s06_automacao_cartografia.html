@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0B1F3A; }
+    .slide-container { width: 1280px; min-height: 720px; background: #F5F7FA; display: flex; flex-direction: column; padding: 48px; position: relative; }
+    
+    .header { margin-bottom: 40px; }
+    h2 { font-size: 40px; color: #0B1F3A; font-weight: 700; margin-bottom: 12px; }
+    .divider { width: 60px; height: 4px; background: #D6A944; }
+    
+    .content { flex: 1; display: flex; gap: 40px; }
+    
+    .text-col { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    .diagram-col { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+    
+    .info-box { border-left: 4px solid #0B1F3A; padding: 20px; background: #FFFFFF; }
+    .info-box h3 { font-size: 22px; color: #0B1F3A; margin-bottom: 12px; }
+    .info-box p { font-size: 18px; line-height: 1.5; color: #475569; }
+    
+    .layer-stack { position: relative; height: 300px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .layer { width: 80%; height: 80px; border: 2px solid #0B1F3A; background: rgba(255, 255, 255, 0.9); position: absolute; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 18px; color: #0B1F3A; transform: rotateX(60deg) rotateZ(-45deg); box-shadow: -5px 5px 0 rgba(0, 124, 131, 0.2); }
+    .layer.l1 { bottom: 40px; left: 40px; }
+    .layer.l2 { bottom: 100px; left: 40px; background: rgba(0, 124, 131, 0.1); }
+    .layer.l3 { bottom: 160px; left: 40px; background: rgba(214, 169, 68, 0.1); }
+    
+    .footer { position: absolute; bottom: 20px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 14px; color: #0B1F3A; font-weight: 600; border-top: 1px solid #007C83; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Automação na Cartografia</h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="content">
+      <div class="text-col">
+        <div class="info-box">
+          <h3>Simbologia Baseada em Regras</h3>
+          <p>Atributos do banco de dados definem automaticamente cores, espessuras e símbolos no mapa final.</p>
+        </div>
+        <div class="info-box">
+          <h3>Generalização Cartográfica</h3>
+          <p>Algoritmos simplificam feições, suavizam linhas e resolvem conflitos de sobreposição conforme a escala.</p>
+        </div>
+        <div class="info-box">
+          <h3>Composição de Mapas</h3>
+          <p>Geração em lote de cartas topográficas (Atlas) com atualização automática de grade, legenda e carimbo.</p>
+        </div>
+      </div>
+      
+      <div class="diagram-col">
+        <div class="layer-stack">
+          <div class="layer l1">Base de Dados (Atributos)</div>
+          <div class="layer l2">Regras de Simbologia (QGIS/CAD)</div>
+          <div class="layer l3">Composição Cartográfica Final</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Projeto de Levantamento Topográfico · UFPE / LABAT</span>
+      <span>6 / 31</span>
+    </div>
+  </div>
+</body>
+</html>
